@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Prototype pencere sınıfı - Erhan is typing&#8230;</title>
+  <meta name="author" content="Erhan Abay">
+
+  
+  <meta name="description" content="Prototype aşağı, prototype yukarı! Aslında tüm özelliklerini örneklendiremesek bile öğrenmek isteyenlere önayak olduğumuzu düşünüyoruz. Bu aydan &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://eabay.github.io/2007/05/17/prototype-pencere-sinifi">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="http://feeds2.feedburner.com/erhanabay" rel="alternate" title="Erhan is typing..." type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.entry-content').fitVids();
+    });
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-266874-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Erhan is typing&#8230;</a></h1>
+  
+    <h2>WebDevelopment , PHP, Javascript, CakePHP, ExtJS</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds2.feedburner.com/erhanabay" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:eabay.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Prototype pencere sınıfı</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-05-17T12:00:00+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>12:00 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://eabay.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="right" src="/images/posts/proto.png"></p>
+
+<p>Prototype aşağı, prototype yukarı! Aslında tüm özelliklerini örneklendiremesek bile öğrenmek isteyenlere önayak olduğumuzu düşünüyoruz. Bu aydan itibaren yine prototype için mevcut eklentiler ile kütüphanenin nasıl daha kullanışlı hale getirilebileceğini görelim.</p>
+
+<!--more-->
+
+
+<p>Yazımıza Prototype çatısı ile devam ettiğimizden beri bunun temel bir kütüphane olduğuna ve bazı çatıların da temelini oluşturduğuna değinmiştik. Javascript ile kod yazmayı daha pratik hale getiren temelin üzerine kurulmuş bu eklentilerden biri olan pencere sınıfı ile sayfalarınızda ziyaretçilerinizin gözüne hoş gelebilecek, tabir-i caizse, sözde pencereler oluşturmak gerçekten çok kolay. Üstelik bu pencereler açılır pencere engelleyiciler tarafından da engellenmiyor ;)</p>
+
+<h2>Pencere sınıfını nasıl kullanabiliriz?</h2>
+
+<p>Öncelikle <a href="http://prototype-window.xilinus.com/download.html">http://prototype-window.xilinus.com/download.html</a> adresinden en son sürümü (şu anki sürüm 0.96.2) indirmekle başlayabiliriz. Arşiv dosyasını açtığınızda birçok dosya göreceksiniz. Bizim ilgilendiklerimiz ise <code>javascripts</code> klasöründeki <code>window.js</code>, <code>effects.js</code> ve tabii ki <code>prototype.js</code>. Bunlar dışında da pencerelerin biçimlendirilmesinde kullanılan <code>themes</code> klasörüne ihtiyacımız olacak.</p>
+
+<p>Daha sonra ki işlemimiz de sayfamızın <code>head</code> etiketi içerisine javascript ve css dosyalarını aşağıdaki gibi eklemek.</p>
+
+<p>CSS dosyalarının tümünü eklemek zorunda değiliz. <code>default.css</code>, dışında sadece kullanacaklarınızı ekleyip diğerlerini göz ardı edebilirsiniz.</p>
+
+<blockquote><p>Örnekler içerisinde göreceğiniz uyarı ve onay pencereleri için <code>alert.css</code> dosyası da eklenmelidir.</p></blockquote>
+
+<p>Şimdi ilk pencere örneğimize geçebiliriz.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>200x150 boyutlarında sade bir <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:pencereGoster1()&quot;</span><span class="nt">&gt;</span>pencere aç<span class="nt">&lt;/a&gt;</span>.
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">pencereGoster1</span><span class="p">()</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="nx">pencere1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Window</span><span class="p">(</span><span class="s1">&#39;pencere1&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">className</span><span class="o">:</span> <span class="s2">&quot;darkX&quot;</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Örnek 1&quot;</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">width</span><span class="o">:</span><span class="mi">200</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">height</span><span class="o">:</span><span class="mi">150</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="nx">pencere1</span><span class="p">.</span><span class="nx">getContent</span><span class="p">().</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;İlk örneğimiz&quot;</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">pencere1</span><span class="p">.</span><span class="nx">setDestroyOnClose</span><span class="p">();</span>
+</span><span class='line'>        <span class="nx">pencere1</span><span class="p">.</span><span class="nx">showCenter</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Örnekte öncelikle <code>Window</code> adlı nesneden <code>pencere1</code> adıyla kendimize de bir tane kopyaladık ve özelliklerini de parantez içindeki kısımda belirledik. Buradaki değerler içerisinde <code>pencere1</code>, pencere oluşturulurken kullanılan katmanın <code>id</code> özelliği olacak. Böylece müdahale etmek istediğimizde <code>getElementById</code> ile bu sayfa öğesine erişim gerçekleştirilebilir. <code>className</code> için de yukarıda eklediğimiz CSS dosyalarının isimlerini dosya türü olmadan (yani .css olmadan) kullanıyoruz. <code>title</code> penceremizin başlığı, <code>width</code> genişliği, <code>height</code> da yüksekliği belirler. <code>.getContent().innerHTML</code> ile pencere içeriğini oluşturduktan sonra <code>.setDestroyOnClose()</code> ile pencereyi kapattığımızda kopyaladığımız nesnenin ortadan kaldırılmasını sağlıyoruz. Eğer bunu yapmazsak pencere sayfada görüntülenmese dahi bellekten silinmediyse tekrar açılmasını istediğimizde aşağıdaki hatayı alacağız. İçerikte HTML kodlarını da kullanabilirsiniz.</p>
+
+<p><img class="center" src="data:image/png;base64,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"></p>
+
+<p>En son satırdaki <code>.showCenter()</code>la da penceremizi sayfada ortalıyoruz. Tüm bu işlemleri <code>pencereGoster1()</code> adlı fonksiyonumuzun içerisine yerleştirdiğimiz için tıklandığında açılması için bir bağlantı içerisinde çağırıyoruz. İşte örneğimiz!</p>
+
+<p><img class="center" src="data:image/png;base64,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"></p>
+
+<h2>Pencerede farklı bir adresi görüntüleme</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">pencere2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Window</span><span class="p">(</span><span class="s1">&#39;pencere2&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">className</span><span class="o">:</span> <span class="s2">&quot;mac_os_x&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://pctech.com.tr/&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Örnek 2&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">width</span><span class="o">:</span><span class="mi">800</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">height</span><span class="o">:</span><span class="mi">600</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="nx">pencere2</span><span class="p">.</span><span class="nx">setDestroyOnClose</span><span class="p">();</span>
+</span><span class='line'><span class="nx">pencere2</span><span class="p">.</span><span class="nx">showCenter</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Eğer pencere özelliklerinde <code>url</code> ile bir adres tanımlarsak pencere içerisinde bu adres görüntülenecektir. Bu durumda <code>.getContent().innerHTML</code>i kullanmamıza gerek kalmıyor.</p>
+
+<h2>Uyarı</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Dialog</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Aşağıdaki buton ile bu uyarı penceresini kapatabilirsiniz.&quot;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">windowParameters</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">width</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span>
+</span><span class='line'>        <span class="nx">height</span><span class="o">:</span><span class="mi">100</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="nx">okLabel</span><span class="o">:</span> <span class="s2">&quot;Kapat&quot;</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Uyarı pencereleri için <code>Dialog.alert()</code>i kullanacağız. Parantez içerisinde yapacağımız ile tanımlama pencere içeriğini, <code>windowsParameters</code> kısmı <code>Window</code> nesnesindeki tüm özellik tanımlamalarını yapmamızı sağlıyor. <code>okLabel</code> da pencereyi kapatmamızı sağlayan butonun değerini belirliyor. <code>Dialog</code> modülünün özelliği, pencerenin diğer tüm sayfanın üzerine bir katman olarak gelip sayfadaki bağlantı, buton gibi kullanıcı etkileşimli öğeleri etkinsizleştirmesidir.</p>
+
+<p><img class="center" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAABvCAIAAAD34UvGAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH1ggfDSgIa+fsUQAAAAd0RVh0QXV0aG9yAKmuzEgAAAAMdEVYdERlc2NyaXB0aW9uABMJISMAAAAKdEVYdENvcHlyaWdodACsD8w6AAAADnRFWHRDcmVhdGlvbiB0aW1lADX3DwkAAAAJdEVYdFNvZnR3YXJlAF1w/zoAAAALdEVYdERpc2NsYWltZXIAt8C0jwAAAAh0RVh0V2FybmluZwDAG+aHAAAAB3RFWHRTb3VyY2UA9f+D6wAAAAh0RVh0Q29tbWVudAD2zJa/AAAABnRFWHRUaXRsZQCo7tInAAABAElEQVR4nO3cvY7TShjG8RBtd+4ECYkSiW7vi4rrQaJCVNshHZ0KccTeybYRhZEx8/H6na94nuT/qzbO+PU49hOP7axffXl++fj6nxOAWX14fnlY/vp2uRzbFQBJ78/n0+n0ELwGMI/1CPqQnArgcNtjJ0dRQABBBQQQVEAAQQUETBDU7dVm/5Vnu2XFFexpL3qXdmzaFUGDho16PkvuE937POJDUPxg4dxqVRv3Yb9JbmHLvZz1j2qXy5+uc38ISKkNal/XzKfEd4FEJxFwbrWqjTsgqNsj+7ZPnunbd4NjtTFgyFXeNlin20OAZKnkLMvEpX0wIjCK7HZ1t5PO0Ufpivgnk+jprgAAAQBJREFUxm8FH2+w3GDF7YHY7qcUr37FLJ468Rrt7szBMNPY4cuzWhXU7ZKCLRenK5e63AZLBtJolqtsTPGsl3PGeMc1XlbUN3poh7l5z6jh38oVRZx/e5o563hmz61d700w+KLFNs+Jhft6bzfbPbD4P6CgZfCl6BEvzjgDL60fFDdmb18RQ1At+Nb29Ge3fnJxxur7Zymq4/zAk2vXexNc8Rx13JXMXOWrHUmw4nr1GOVBDc7K1olLJHJDc/8JZ0V/kpVvco+ZfKXGbeW+Bf11codQ57WGfqqOqMkRefLd3OWHXozKFWdH85tkXdZt6jxn7rjcK9fxDOavso/N/Q3dru/pGcuECdEAAAEASURBVHCQ5osli0t0o8IuEswVv5Usbjfzz+6UG88bHUi27HgccHYj0GtF4gbGqnUcppZ2fhVf9yqqk2t5xFd/74tJyeF7PDGXVePCWrJZ0ey7gYn3xd0OxH8PPYFxFq9bkd1l2Ttoafucos7vSl7U9ddx7s/jFQbVc5tke9KSmzG+aL67rNzL5PS4ZvstBP8qeK7X+zvjKd7SwLNN45fJLz7ntiha6O67u/WdHSjaMeyJFe/uOfr8bdxAEbghI39CWDoycc4C3J8BQS0NG+FUNGirsTNkHD30BeBAUAEBBLXQPD+faPwdHKSwCafUHq2i34TUlWqvDDc+XEAAQb1R1b/rqJ6ACdF5AAABAElEQVSFC7YjzfHMJF3GP3ZdNv++Y9wrTs5yim5HG/+flJueTM46PeiYsZTcLLklxmNgMtyMoDaIU5rbcXPNkm/Fv0yuqNyx//5ZFsY3EWrxIdaK91H/j5aLfrxVV7mlrPFu6RL5TWgnHFGrGAPLilIdm02FlPZDUMsZdz5yZ49GKc8sFZUr9P3dNSntiqCW63J+6J/lmnt84xphGMEB1SRKTwjvCiHvjV2tgZFVI8ON57cVlZ26Pzxl3CLuD0PfNuutlPgEb32Ze7aIMUvub2flOh3PUft2DAS1mHHbMHe3pu5ZJ8bDRIxHnPhLjXvCiH994cZQBBBAUAEBBHUwBnvogaAC+C4kywAAAQBJREFUAggqIICgAgIIKiCAoAICCCoggKACAggqIICgAgIIKiCAoAICCCoggKACAggqIICgAgIIKiCAoAICCCoggKACAggqvB4fH4/uwv3iub5H+vnjv6O74PXp89eju3DXOKICAggqIICgAgIIKiCAoM7uzdt3xkvcCYKq5M3bd/9//7d7zb4FMQJBlTEipVDBfVQNyZRuD4bru0vL9a3tXHH7ZQpfAfMjqAJyKQ1CGGQ1+DvZfok0KZ0fQRWQjNP2sBm3zxUZ0j+MR1A1xFmNX9oVSttjKlxMksEh8Z4RVCXOrJLn28PQV8w6Bg5Cux0bJ6/65tpzPUkCQZ1dHKFt9nItcy1ymPIAAACgSURBVNeTPHUwIYa+gACCCgggqLeGcexN4hz1SDzfBE4E9TA8Kwx+BPUwT09PR3cBMjhHBQQQVEAAQQUEEFRAAEEFBBBUQABBBQQQVEAAQQUEEFRAAEEFBBBUQABBBQQQVEAAQQUEEFRAAEEFBBBUQABBBQQQVEAAQQUE/PUUwvdncgvM6E9Qv10uB/YDgOF3UDmWAjN79eX55eg+ANjxC9mXq4FcoE7jAAAAAElFTkSuQmCC""></p>
+
+<h2>İçerik olarak sayfadan bir bölümü kullanma</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">pencereGoster4</span><span class="p">()</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="nx">pencere4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Window</span><span class="p">(</span><span class="s1">&#39;pencere4&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">className</span><span class="o">:</span> <span class="s2">&quot;spread&quot;</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">resizable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">hideEffect</span><span class="o">:</span><span class="nx">Element</span><span class="p">.</span><span class="nx">hide</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">showEffect</span><span class="o">:</span><span class="nx">Element</span><span class="p">.</span><span class="nx">show</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">minWidth</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">maxWidth</span><span class="o">:</span> <span class="mi">300</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="nx">pencere4</span><span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="s1">&#39;pencere_icerigi&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</span><span class='line'>        <span class="nx">pencere4</span><span class="p">.</span><span class="nx">toFront</span><span class="p">();</span>
+</span><span class='line'>        <span class="nx">pencere4</span><span class="p">.</span><span class="nx">setDestroyOnClose</span><span class="p">();</span>
+</span><span class='line'>        <span class="nx">pencere4</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;pencere_icerigi&quot;</span> <span class="na">style=</span><span class="s">&quot;float:right&quot;</span><span class="nt">&gt;</span>4. örnekteki pencere içeriğini bu bölüm oluşturuyor.<span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>En alttaki <code>pencere_icerigi</code> <code>id</code> özelliğine sahip alanı fark etmiş olmalısınız. Şimdi bu alanı penceremizin içeriği olarak görüntüleyeceğiz. Bunun için <code>.setContent()</code> özelliğini kullanıyoruz. <code>.setContent()</code> içerisinde öncelikle sayfa elemanının <code>id</code>sini tanımlayıp daha sonra da boyut ve yerleşim özelliklerini <code>true</code> ile otomatik hale getiriyoruz. Ardından <code>.toFront()</code> ile de sayfadaki tüm pencerelerden önde görünmesini sağlıyoruz. Kod içerisinde <code>Windows</code> nesnesinde kullanılan bazı yeni özelliklerine de yer verdik. Örneğin <code>resizable: false</code> ile yeniden boyutlandırılamaz, <code>minWidth: 10&amp;#8242; ile en az 10px genişliğinde,</code>maxWidth: 300&#8242; ile de en fazla 300px genişliğinde bir pencere tanımlaması yapmış oluyoruz. Değişiklikleri pencere büyültme ve küçültme butonlarını kullanarak görebilirsiniz.</p>
+
+<h2>Onay penceresi</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Dilog</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;Değişiklikleri onaylıyor musunuz?&quot;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;onayPenceresi&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">okLabel</span><span class="o">:</span> <span class="s2">&quot;Evet&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">cancelLabel</span><span class="o">:</span> <span class="s2">&quot;Hayır&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">windowParameters</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">width</span><span class="o">:</span><span class="mi">300</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="nx">ok</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">pencere</span><span class="p">)</span> <span class="p">{</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Onaylandı&quot;</span><span class="p">);</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;},</span>
+</span><span class='line'>    <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">pencere</span><span class="p">)</span> <span class="p">{</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;İptal edildi&quot;</span><span class="p">)}</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>Dialog</code> için <code>confirm</code> özelliğini kullanarak şimdi de bir onay penceresi oluşturacağız. <code>alert özelliğinden farkı onaylama dışında iptal etme için de bir seçeneğimizin olması. Seçime bağlı olarak da istediğimiz fonksiyonu çağırarak uygun işlemin yapılmasını sağlayabiliriz.</code>(ok|cancel)Label<code>özellikleri ile onay ve iptal butonlarımızın değerlerini belirlerken tıklanan butona göre</code>ok|cancel` iş bitirici fonksiyonumuzu devreye sokuyor.</p>
+
+<h2>İletişim penceresi</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">zamanAsimi</span><span class="p">;</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">iletisimKutusuAc</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">Dialog</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;Bu pencere 5 saniye içerisinde kapanacak&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">windowParameters</span><span class="o">:</span> <span class="p">{</span><span class="nx">width</span><span class="o">:</span><span class="mi">250</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span><span class="mi">100</span><span class="p">},</span> <span class="nx">showProgress</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+</span><span class='line'>    <span class="nx">zamanAsimi</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span><span class='line'>    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">zamanBilgisi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">zamanBilgisi</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">zamanAsimi</span><span class="o">--</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">zamanAsimi</span> <span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">Dialog</span><span class="p">.</span><span class="nx">setInfoMessage</span><span class="p">(</span><span class="s2">&quot;Bu pencere &quot;</span> <span class="o">+</span> <span class="nx">zamanAsimi</span> <span class="o">+</span> <span class="s2">&quot; saniye içerisinde kapanacak&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">zamanBilgisi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</span><span class='line'> <span class="p">}</span>
+</span><span class='line'> <span class="k">else</span>
+</span><span class='line'>    <span class="nx">Dialog</span><span class="p">.</span><span class="nx">closeInfo</span><span class="p">()</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nx">iletisimKutusuAc</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yine bir <code>Dialog</code> fakat bu kez <code>info</code>. 5&#8217;ten geri sayarak açılan pencereyi otomatik kapatan, bunun dışında farklı bir kapatma seçeneği olmayan bir pencere. Elimizde <code>iletisimKutusuAc()</code> ve <code>zamanBilgisi()</code> olarak 2 fonksiyon bulunuyor. Birinci fonksiyon iletişim kutusunu oluşturuyor; diğeri ise geri sayım ve pencere içeriğinde buna bağlı güncellemeyi gerçekleştiriyor.<br/>
+Pencere özellikleri içerisinde <code>showProgress: true</code> dikkatinizi çekmiş olabilir. Bu, pencere içerisinde bir <code>işlem yapılıyor</code> anlamına gelen resmin görüntülenmesini sağlıyor. <code>setTimeout(zamanBilgisi, 1000)</code> satırları ile <code>zamanBilgisi()</code> fonksiyonu 1&#8217;er saniyelik gecikmelerle çağırılarak çalıştırılıyor.</p>
+
+<p><code>zamanBilgisi()</code> fonksiyonuna bakarsanız da öncelikle başlangıçta <code>5</code> olarak belirlenen süre 1 saniye azaltılıyor. Daha sonra da saniyenin 0 olmaması koşulu ile pencere içeriği <code>.setInfoMessage()</code> ile güncelleniyor. 0 olduğu takdirde de <code>.closeInfo()</code> ile kapatılıyor.</p>
+
+<h2>AJAX iş başında!</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">pencere7</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Window</span><span class="p">(</span><span class="s1">&#39;pencere7&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">className</span><span class="o">:</span> <span class="s2">&quot;alphacube&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Örnek 7&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">width</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">height</span><span class="o">:</span><span class="mi">100</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="nx">pencere7</span><span class="p">.</span><span class="nx">setAjaxContent</span><span class="p">(</span><span class="s2">&quot;ajax_cevap.php&quot;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">parameters</span><span class="o">:</span> <span class="s1">&#39;kullaniciAdi=erhan&amp;sifre=yok&amp;eposta=eposta@adres.com&#39;</span>
+</span><span class='line'><span class="p">},</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+</span><span class='line'><span class="nx">pencere7</span><span class="p">.</span><span class="nx">setDestroyOnClose</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>ajax_cevap.php</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="k">echo</span><span class="p">(</span><span class="s2">&quot;Kullanıcı adı: &quot;</span><span class="o">.</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;kullaniciAdi&quot;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">echo</span><span class="p">(</span><span class="s2">&quot;Şifre: &quot;</span><span class="o">.</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;sifre&quot;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">echo</span><span class="p">(</span><span class="s2">&quot;E-posta: &quot;</span><span class="o">.</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;eposta&quot;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Penceremizin içeriğini AJAX ile yapacağımız istek sayesinde belirlememizi sağlayan kodumuz son örnek olarak karşımızda. <code>.setAjaxContent()</code> ile gerçekleştirdiğimiz bu işlem aslında geçen haftalarda anlattığımız <code>Ajax.Request</code>tin ta kendisi. <code>ajax_cevap.php</code> sayfasına <code>GET</code> metodu ile gönderdiğimiz veri pencere içerisinde biçimlendirilerek görüntüleniyor.</p>
+
+<p>Bu ay ki örneklerimizi de burada sonlandırdık. Önümüzdeki sayıda yine prototype temelli bir kütüphane olan script.aculo.us ile devam edeceğiz.</p>
+
+<h2>Efektler</h2>
+
+<p>Kullandığımız sınıf, pencerelerin açılıp kapanması sırasında efektler kullanabilmemize olarak sağlıyor. Prototype temelli bir kütüphane olan script.aculo.us içerisindeki efektlerin dahil edildiği sınıfta pencere özelliklerinde showEffect ve hideEffect ile pencerelerin nasıl açılıp nasıl kapanacağını belirleyebilirsiniz. Örneğin,</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">showEffect</span><span class="o">:</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">Appear</span>
+</span><span class='line'><span class="nx">hideEffect</span><span class="o">:</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">Fade</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Daha fazla örnek için <a href="http://wiki.script.aculo.us/scriptaculous/show/CombinationEffectsDemo">http://wiki.script.aculo.us/scriptaculous/show/CombinationEffectsDemo</a> adresini kontrol edebilirsiniz.</p>
+
+<blockquote><p>Bu yazı Ekim 2006 tarihinde PC Tech dergisinde yayınlanmıştır.</p></blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Erhan Abay</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2007-05-17T12:00:00+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>12:00 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/category/ajax/'>ajax</a>, <a class='category' href='/category/javascript/'>javascript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://eabay.github.io/2007/05/17/prototype-pencere-sinifi/" data-via="erhanabay" data-counturl="http://eabay.github.io/2007/05/17/prototype-pencere-sinifi/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2007/05/16/prototype-ile-form-gonderimi/" title="Previous Post: Prototype ile form gönderimi">&laquo; Prototype ile form gönderimi</a>
+      
+      
+        <a class="basic-alignment right" href="/2007/05/17/scriptaculous/" title="Next Post: script.aculo.us">script.aculo.us &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p><img class="center" src="//s.gravatar.com/avatar/ec3dd0c0beb4842f3c3ec38a5edaa001?s=160"></p>
+  <p>I am a partner at <a href="http://mc2.com.tr/">MC2</a>, a company delivering software and hardware solutions.</p>
+  <p>See my <a href="http://about.me/eabay">about.me page</a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/01/11/wordpress-plugin-gemius-tracking-code/">WordPress Plugin: Gemius Tracking Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/09/object-oriented-wordpress-plugin-development/">Object-Oriented WordPress Plugin Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/06/bitbucket-repo-sync-application/">Bitbucket Repo Sync Application</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/01/23/top10hardware-com/">TOP10Hardware.com</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2009/11/28/ext-direct-for-cakephp/">Ext.Direct for CakePHP</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/eabay">@eabay</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'eabay',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Erhan Abay -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'erhanabay';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://eabay.github.io/2007/05/17/prototype-pencere-sinifi/';
+        var disqus_url = 'http://eabay.github.io/2007/05/17/prototype-pencere-sinifi/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

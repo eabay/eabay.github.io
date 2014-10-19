@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: javascript | Erhan is typing...]]></title>
+  <link href="http://eabay.github.io/category/javascript/atom.xml" rel="self"/>
+  <link href="http://eabay.github.io/"/>
+  <updated>2014-10-19T03:12:33+03:00</updated>
+  <id>http://eabay.github.io/</id>
+  <author>
+    <name><![CDATA[Erhan Abay]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ext.Direct for CakePHP]]></title>
+    <link href="http://eabay.github.io/2009/11/28/ext-direct-for-cakephp/"/>
+    <updated>2009-11-28T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2009/11/28/ext-direct-for-cakephp</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CakePHP Helper for rakaz Combine]]></title>
+    <link href="http://eabay.github.io/2009/11/19/cakephp-helper-for-rakaz-combine/"/>
+    <updated>2009-11-19T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2009/11/19/cakephp-helper-for-rakaz-combine</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[FrameworkScanner: Global namespace checker]]></title>
+    <link href="http://eabay.github.io/2009/10/20/frameworkscanner-global-namespace-checker/"/>
+    <updated>2009-10-20T00:00:00+03:00</updated>
+    <id>http://eabay.github.io/2009/10/20/frameworkscanner-global-namespace-checker</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Items Per Page Plugin for ExtJS]]></title>
+    <link href="http://eabay.github.io/2009/10/10/items-per-page-plugin-for-extjs/"/>
+    <updated>2009-10-10T00:00:00+03:00</updated>
+    <id>http://eabay.github.io/2009/10/10/items-per-page-plugin-for-extjs</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Do you need adblock detection?]]></title>
+    <link href="http://eabay.github.io/2009/07/28/do-you-need-adblock-detection/"/>
+    <updated>2009-07-28T00:00:00+03:00</updated>
+    <id>http://eabay.github.io/2009/07/28/do-you-need-adblock-detection</id>
+  </entry>
+  
+</feed>

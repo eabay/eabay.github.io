@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: wordpress | Erhan is typing...]]></title>
+  <link href="http://eabay.github.io/category/wordpress/atom.xml" rel="self"/>
+  <link href="http://eabay.github.io/"/>
+  <updated>2014-10-19T03:12:33+03:00</updated>
+  <id>http://eabay.github.io/</id>
+  <author>
+    <name><![CDATA[Erhan Abay]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[WordPress Plugin: Gemius Tracking Code]]></title>
+    <link href="http://eabay.github.io/2012/01/11/wordpress-plugin-gemius-tracking-code/"/>
+    <updated>2012-01-11T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2012/01/11/wordpress-plugin-gemius-tracking-code</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Object-Oriented WordPress Plugin Development]]></title>
+    <link href="http://eabay.github.io/2012/01/09/object-oriented-wordpress-plugin-development/"/>
+    <updated>2012-01-09T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2012/01/09/object-oriented-wordpress-plugin-development</id>
+  </entry>
+  
+</feed>

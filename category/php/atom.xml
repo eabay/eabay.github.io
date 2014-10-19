@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: php | Erhan is typing...]]></title>
+  <link href="http://eabay.github.io/category/php/atom.xml" rel="self"/>
+  <link href="http://eabay.github.io/"/>
+  <updated>2014-10-19T03:12:33+03:00</updated>
+  <id>http://eabay.github.io/</id>
+  <author>
+    <name><![CDATA[Erhan Abay]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[WordPress Plugin: Gemius Tracking Code]]></title>
+    <link href="http://eabay.github.io/2012/01/11/wordpress-plugin-gemius-tracking-code/"/>
+    <updated>2012-01-11T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2012/01/11/wordpress-plugin-gemius-tracking-code</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Object-Oriented WordPress Plugin Development]]></title>
+    <link href="http://eabay.github.io/2012/01/09/object-oriented-wordpress-plugin-development/"/>
+    <updated>2012-01-09T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2012/01/09/object-oriented-wordpress-plugin-development</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bitbucket Repo Sync Application]]></title>
+    <link href="http://eabay.github.io/2012/01/06/bitbucket-repo-sync-application/"/>
+    <updated>2012-01-06T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2012/01/06/bitbucket-repo-sync-application</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ext.Direct for CakePHP]]></title>
+    <link href="http://eabay.github.io/2009/11/28/ext-direct-for-cakephp/"/>
+    <updated>2009-11-28T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2009/11/28/ext-direct-for-cakephp</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CakePHP Helper for rakaz Combine]]></title>
+    <link href="http://eabay.github.io/2009/11/19/cakephp-helper-for-rakaz-combine/"/>
+    <updated>2009-11-19T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2009/11/19/cakephp-helper-for-rakaz-combine</id>
+  </entry>
+  
+</feed>

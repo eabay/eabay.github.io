@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>script.aculo.us Efektleri - Erhan is typing&#8230;</title>
+  <meta name="author" content="Erhan Abay">
+
+  
+  <meta name="description" content="Geçen yazımızda başladığımız script.aculo.us serüvenine bıraktığımız yerden devam ediyoruz. Bu hafta kütüphanenin efektler bölümünü ele alacağız ve &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://eabay.github.io/2007/05/17/scriptaculous-efektleri">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="http://feeds2.feedburner.com/erhanabay" rel="alternate" title="Erhan is typing..." type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.entry-content').fitVids();
+    });
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-266874-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Erhan is typing&#8230;</a></h1>
+  
+    <h2>WebDevelopment , PHP, Javascript, CakePHP, ExtJS</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds2.feedburner.com/erhanabay" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:eabay.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">script.aculo.us Efektleri</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-05-17T14:00:00+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>2:00 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://eabay.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="/images/posts/scriptaculous_logo.png"></p>
+
+<p><a href="/2007/05/17/scriptaculous/">Geçen yazımızda</a> başladığımız script.aculo.us serüvenine bıraktığımız yerden devam ediyoruz. Bu hafta kütüphanenin efektler bölümünü ele alacağız ve temel efektlerden birer örnek yapmaya çalışacağız.</p>
+
+<!--more-->
+
+
+<p>script.aculo.us kütüphanesinin efektleri, sürükle-bırak, sıralama, otomatik tamamlama gibi işlerinizi kolaylaştıracak kontrolleri ve DOM öğelerini üretebilen özellikleri barındırdığından bahsetmiştik. Bu ay efekt kullanımına değineceğiz. Geçen ayki yazıya ulaşamayanlar pctech.com.tr adresini ziyaret edebilirler.</p>
+
+<p>Geçen ay da değindiğimiz bir iki şeyin üzerinden yine geçelim. Efekt kullanımından standart söz dizimi</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">new</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">EffektAdi</span><span class="p">(</span><span class="nx">element_id</span><span class="p">,</span> <span class="nx">gerekli</span><span class="o">-</span><span class="nx">parametreler</span> <span class="p">[,</span> <span class="nx">secenekler</span><span class="p">]);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>şeklindedir. Her efekt için gerekli parametre olmayabilir. İleride efektlere tek tek değinirken kullanılıp kullanılmadığına da yer vereceğiz. Seçenekler de genel veya sadece efekte bağlı olabilir.</p>
+
+<p>Seçenekler bölümünde tüm efektler için ortak parametreler şu şekildedir:</p>
+
+<table>
+<thead>
+<tr>
+<th> İsim       </th>
+<th> Açıklama   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> duration   </td>
+<td> Efektin saniye cinsinden uygulanma süresi (Varsayılan: 1.0) </td>
+</tr>
+<tr>
+<td> fps        </td>
+<td> Efekti bir film gibi düşünün. İşte bu ayar efektin saniye başına kaç kare olacağını belirler. Varsayılan <code>25</code>. En fazla <code>100</code> olabilir. <em>25&#8217;in üstünü zaten insan gözü algılamaz ;)</em> </td>
+</tr>
+<tr>
+<td> transition </td>
+<td> Geçişin nasıl olacağınız belirler. Kullanılabilecek değerler: <code>Effect.Transitions.sinoidal</code> (varsayılan), <code>Effect.Transitions.linear</code>, <code>Effect.Transitions.reverse</code>, <code>Effect.Transitions.wobble</code> ve <code>Effect.Transitions.flicker</code>. </td>
+</tr>
+<tr>
+<td> from       </td>
+<td> Geçişin (transition) başlangıç noktasını belirler. 0.0 ve 1.0 arasında bir değer olabilir (Varsayılan: 0.0). </td>
+</tr>
+<tr>
+<td> to         </td>
+<td> Geçişin bitiş noktasını belirler. 0.0 ve 1.0 arasında bir değer olabilir (Varsayılan: 0.0). </td>
+</tr>
+<tr>
+<td> sync       </td>
+<td> Efektin kareleri otomatik olarak gösterip göstermeyeceğini belirler. <code>True</code> değeri verildiğinde efektin <code>render()</code> metodu çağırılarak kareler kontrol edilebilir. <code>Paralel</code> efektinde kullanılır. </td>
+</tr>
+<tr>
+<td> queue      </td>
+<td> Efektin hangi sırada olacağını belirler. Kullanımına daha sonra değineceğiz. </td>
+</tr>
+<tr>
+<td> direction  </td>
+<td> Geçişin yönünü belirler. <code>top-left</code>, <code>top-right</code>, <code>bottom-left</code>, <code>bottom-right</code> veya <code>center</code> (varsayılan) değerlerini alabilir ve sadece <code>Grow</code> ve <code>Shrink</code> efektlerinde kullanılabilir.</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Bunlar dışında seçenekler içerisine parametre olarak kendi fonksiyonlarınızı da dahil edebilirsiniz. Böylece efekt çalıştırılmaya devam ederken belirtilen olaylara bağlı olarak sizin fonksiyonunuz da çalıştırılır. Efekt nesnesi fonksiyonunuza parametre olarak geçirilir. Bu sayede efekt nesnesine de erişerek kendi fonksiyonunuzda kullanabilirsiniz. Kullanabileceğiniz olaylar şunlardır:</p>
+
+<table>
+<thead>
+<tr>
+<th> İsim         </th>
+<th> Açıklama     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> beforeStart  </td>
+<td> Belirtilen fonksiyon efekt gösteriminin döngüsü başlamadan önce çağırılır. </td>
+</tr>
+<tr>
+<td> beforeUpdate </td>
+<td> Gösterim döngüsünün her bir tekrarında, değişim gerçekleşmeden önce çağırılır. </td>
+</tr>
+<tr>
+<td> afterUpdate  </td>
+<td> Gösterim döngüsünün her bir tekrarında, değişim gerçekleştekten sonra çağırılır. </td>
+</tr>
+<tr>
+<td> afterFinish  </td>
+<td> Efekt gösteriminin döngüsü bittikten sonra çağırılır. </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Kuru kuru bunların ne anlama geldiğini kavramada sorun olabilir o yüzden örneklere geçmeden bir kod örneği verelim.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">baslamadanOnce</span><span class="p">(</span><span class="nx">sayfaOgesi</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Efektin uygulandığı sayfa elemanının id değeri: &#39;</span> <span class="o">+</span> <span class="nx">sayfaOgesi</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">bittiktenSonra</span><span class="p">(</span><span class="nx">sayfaOgesi</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Efektin uygulandığı sayfa elemanı: &#39;</span> <span class="o">+</span> <span class="nx">sayfaOgesi</span><span class="p">.</span><span class="nx">element</span><span class="p">)</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">new</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">Highlight</span><span class="p">(</span><span class="nx">oge</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">startcolor</span><span class="o">:</span> <span class="s1">&#39;#ffffff&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">endcolor</span><span class="o">:</span> <span class="s1">&#39;#ffffcc&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">duration</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">beforeStart</span><span class="o">:</span> <span class="nx">baslamadanOnce</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">afterFinish</span><span class="o">:</span> <span class="nx">bittiktenSonra</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Fonksiyonunuza parametre olarak geçirdiğiniz efekt nesnesinin erişebileceğiniz tüm özellikleri de şu şekilde:</p>
+
+<table>
+<thead>
+<tr>
+<th> İsim                </th>
+<th> Açıklama            </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> effect.element      </td>
+<td> Efektin uygulandığı sayfa öğesi. </td>
+</tr>
+<tr>
+<td> effect.options      </td>
+<td> Efekte ait seçenekler. </td>
+</tr>
+<tr>
+<td> effect.currentFrame </td>
+<td> Gösterilen son karenin numarası. </td>
+</tr>
+<tr>
+<td> effect.startOn      </td>
+<td> Efektin başlatıldığı zamanın milisaniye cinsinden değeri. </td>
+</tr>
+<tr>
+<td> effect.finishOn     </td>
+<td> Efektin bitirildiği zamanın milisaniye cinsinden değeri. </td>
+</tr>
+<tr>
+<td> effect.effects[]    </td>
+<td> <code>Parallel</code> efektinde her bir alt efektin tutulduğu bir <code>effects[]</code> dizisi bulunur. Her bir alt efekte bu dizi içerisinden erişilebilir. </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Efektler</h2>
+
+<p>script.aculo.us kütüphanesi 5 esas efekte sahiptir. Bir de bunların üzerine kurulu çeşitli birleşim efektleri vardır. Bu sayımızda temel efektleri ele alacağız.</p>
+
+<h3>Effect.Opacity</h3>
+
+<p>Sayfa öğesinin saydamlığını değiştirir.</p>
+
+<figure class='code'><figcaption><span>Genel söz dizimi</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">new</span> <span class="nx">Effekt</span><span class="p">.</span><span class="nx">Opacity</span><span class="p">(</span><span class="s1">&#39;element_id&#39;</span> <span class="p">[,</span> <span class="nx">secenekler</span><span class="p">]);</span>
+</span><span class='line'><span class="k">new</span> <span class="nx">Effekt</span><span class="p">.</span><span class="nx">Opacity</span><span class="p">(</span><span class="nx">element</span> <span class="p">[,</span> <span class="nx">secenekler</span><span class="p">]);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Örnek</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">onclick=</span><span class="s">&quot;new Effekt.Opacity(this, {duration: 2.0, from: 1.0, to: 0.0});&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    Dikkat! Tıklarsanız kaybolur
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Öğeye tıklandığında 2 saniye içerisinde (<code>duration: 2.0</code>) saydamlık %100&#8217;den (<code>from: 1.0</code>) %0&#8217;a (<code>to:0.0</code>) düşecek, yani kaybolacak.</p>
+
+<h3>Effect.Scale</h3>
+
+<p>Sayfa öğesinin boyutlarını değiştirir. En ve boy &#8216;em&#8217; birimine göre değiştirilir.</p>
+
+<figure class='code'><figcaption><span>Genel söz dizimi</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">new</span> <span class="nx">Effekt</span><span class="p">.</span><span class="nx">Scale</span><span class="p">(</span><span class="s1">&#39;element_id&#39;</span><span class="p">,</span> <span class="nx">y</span><span class="err">ü</span><span class="nx">zde</span> <span class="p">[,</span> <span class="nx">secenekler</span><span class="p">]);</span>
+</span><span class='line'><span class="k">new</span> <span class="nx">Effekt</span><span class="p">.</span><span class="nx">Scale</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">y</span><span class="err">ü</span><span class="nx">zde</span> <span class="p">[,</span> <span class="nx">secenekler</span><span class="p">]);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Efekte özel seçenekler</h4>
+
+<table>
+<thead>
+<tr>
+<th> İsim            </th>
+<th> Varsayılan </th>
+<th> Açıklama     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> scaleX          </td>
+<td> true       </td>
+<td> Yatay olarak boyutlandırma </td>
+</tr>
+<tr>
+<td> scaleY          </td>
+<td> true       </td>
+<td> Dikey olarak boyutlandırma </td>
+</tr>
+<tr>
+<td> scaleContent    </td>
+<td> true       </td>
+<td> İçeriğin de boyutlandırılması </td>
+</tr>
+<tr>
+<td> scaleFromCenter </td>
+<td> false      </td>
+<td> Öğenin merkez koordinatlarının sabitlenmesi </td>
+</tr>
+<tr>
+<td> scaleMode       </td>
+<td> box        </td>
+<td> Öğenin görülebilen bölgesinin boyutlandırılmasını sağlayan <code>box</code>, öğenin tamamının boyutlandırılmasını sağlayan <code>contents</code> değerlerini alabilir. <code>originalHeight</code> ve <code>originalWidth</code> değişkenleri kullanılarak uygulanacak boyutun tam değerleri de verilebilir, <code>{originalHeight: 400, originalWidth: 200}</code> </td>
+</tr>
+<tr>
+<td> scaleFrom       </td>
+<td> 100.0      </td>
+<td> Boyutlandırmanın başlangıç yüzdesi </td>
+</tr>
+</tbody>
+</table>
+
+
+<figure class='code'><figcaption><span>Örnek</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void()&quot;</span> <span class="na">onclick=</span><span class="s">&quot;new Effekt.Scale(this.parentNode, 120);&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    Biraz daha büyük olsun
+</span><span class='line'>    <span class="nt">&lt;/a&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bağlantıya tıklandığında yazı %120 oranında büyütülecek.</p>
+
+<h3>Effect.MoveBy</h3>
+
+<p>Öğe x ve y piksel kadar yer değiştirir.</p>
+
+<figure class='code'><figcaption><span>Genel söz dizimi</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">new</span> <span class="nx">Effekt</span><span class="p">.</span><span class="nx">MoveBy</span><span class="p">(</span><span class="s1">&#39;element_id&#39;</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">x</span> <span class="p">[,</span> <span class="nx">secenekler</span><span class="p">]);</span>
+</span><span class='line'><span class="k">new</span> <span class="nx">Effekt</span><span class="p">.</span><span class="nx">MoveBy</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">x</span> <span class="p">[,</span> <span class="nx">secenekler</span><span class="p">]);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Örnek</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void()&quot;</span> <span class="na">onclick=</span><span class="s">&quot;new Effekt.MoveBy(this.parentNode, -5, 20);&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    Biraz yukarı, biraz da sağa doğru
+</span><span class='line'>    <span class="nt">&lt;/a&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bağlantıya tıklandığında yazı 5 piksel yukarı, 20 piksel de sağa kayacak. Bu arada ekranın sol üst köşesinin (0,0) noktası olduğunu hatırlatalım.</p>
+
+<h2>Effect.Highlight</h2>
+
+<p>Öğenin arka plan rengini değiştirir, vurgu yapar.</p>
+
+<figure class='code'><figcaption><span>Genel söz dizimi</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">new</span> <span class="nx">Effekt</span><span class="p">.</span><span class="nx">Highlight</span><span class="p">(</span><span class="s1">&#39;element_id&#39;</span> <span class="p">[,</span> <span class="nx">secenekler</span><span class="p">]);</span>
+</span><span class='line'><span class="k">new</span> <span class="nx">Effekt</span><span class="p">.</span><span class="nx">Highlight</span><span class="p">(</span><span class="nx">element</span> <span class="p">[,</span> <span class="nx">secenekler</span><span class="p">]);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Efekte özel seçenekler</h4>
+
+<table>
+<thead>
+<tr>
+<th> İsim         </th>
+<th> Varsayılan       </th>
+<th> Açıklama     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> startcolor   </td>
+<td> #ffff99          </td>
+<td> Efekt başlangıcındaki arka plan rengi </td>
+</tr>
+<tr>
+<td> endcolor     </td>
+<td> #ffffff          </td>
+<td> Efekt bitişindeki arka plan rengi </td>
+</tr>
+<tr>
+<td> restorecolor </td>
+<td> background-color </td>
+<td> Efekt bittikten sonraki arka plan rengi. <code>rgb(0, 255, 0)</code> şeklinde belirtilmeli. </td>
+</tr>
+</tbody>
+</table>
+
+
+<figure class='code'><figcaption><span>Örnek</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">onclick=</span><span class="s">&quot;new Effekt.Highlight(this, {startcolor: &#39;#ff99ff&#39;, endcolor: &#39;#999999&#39;});&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    Pembeden griye...
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>`</p>
+
+<p>Öğeye tıklandığında arka plan rengi pembeden griye dönüşecek.</p>
+
+<h3>Effect.Parallel</h3>
+
+<p>Birden fazla efektin aynı anda uygulanabilmesini sağlar.</p>
+
+<figure class='code'><figcaption><span>Genel söz dizimi</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">new</span> <span class="nx">Effekt</span><span class="p">.</span><span class="nx">Parallel</span><span class="p">([</span><span class="nx">alt</span> <span class="nx">efektler</span><span class="p">]</span> <span class="p">[,</span> <span class="nx">secenekler</span><span class="p">]);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Örnek</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">new</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">Parallel</span><span class="p">([</span>
+</span><span class='line'>    <span class="k">new</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">MoveBy</span><span class="p">(</span><span class="err">öğ</span><span class="nx">e</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">{</span><span class="nx">sync</span><span class="o">:</span> <span class="kc">true</span><span class="p">}),</span>
+</span><span class='line'>    <span class="k">new</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">Opacity</span><span class="p">(</span><span class="err">öğ</span><span class="nx">e</span><span class="p">,</span> <span class="p">{</span><span class="nx">from</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nx">to</span><span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nx">sync</span><span class="o">:</span> <span class="kc">true</span><span class="p">})</span>
+</span><span class='line'><span class="p">],</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">duration</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">afterFinish</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">effect</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">Element</span><span class="p">.</span><span class="nx">hide</span><span class="p">(</span><span class="nx">effect</span><span class="p">.</span><span class="nx">effects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">element</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>MoveBy</code> ve <code>Opacity</code> efektleri aynı öğeye uygulanıyor ve efekt bittiğinde öğe gizleniyor.</p>
+
+<blockquote><p>Bu yazı Aralık 2006 tarihinde PC Tech dergisinde yayınlanmıştır.</p></blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Erhan Abay</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2007-05-17T14:00:00+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>2:00 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/category/ajax/'>ajax</a>, <a class='category' href='/category/javascript/'>javascript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://eabay.github.io/2007/05/17/scriptaculous-efektleri/" data-via="erhanabay" data-counturl="http://eabay.github.io/2007/05/17/scriptaculous-efektleri/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2007/05/17/scriptaculous/" title="Previous Post: script.aculo.us">&laquo; script.aculo.us</a>
+      
+      
+        <a class="basic-alignment right" href="/2007/05/18/zend-studio/" title="Next Post: Zend Studio">Zend Studio &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p><img class="center" src="//s.gravatar.com/avatar/ec3dd0c0beb4842f3c3ec38a5edaa001?s=160"></p>
+  <p>I am a partner at <a href="http://mc2.com.tr/">MC2</a>, a company delivering software and hardware solutions.</p>
+  <p>See my <a href="http://about.me/eabay">about.me page</a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/01/11/wordpress-plugin-gemius-tracking-code/">WordPress Plugin: Gemius Tracking Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/09/object-oriented-wordpress-plugin-development/">Object-Oriented WordPress Plugin Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/06/bitbucket-repo-sync-application/">Bitbucket Repo Sync Application</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/01/23/top10hardware-com/">TOP10Hardware.com</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2009/11/28/ext-direct-for-cakephp/">Ext.Direct for CakePHP</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/eabay">@eabay</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'eabay',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Erhan Abay -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'erhanabay';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://eabay.github.io/2007/05/17/scriptaculous-efektleri/';
+        var disqus_url = 'http://eabay.github.io/2007/05/17/scriptaculous-efektleri/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

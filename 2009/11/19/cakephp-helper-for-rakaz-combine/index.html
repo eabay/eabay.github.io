@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>CakePHP Helper for rakaz Combine - Erhan is typing&#8230;</title>
+  <meta name="author" content="Erhan Abay">
+
+  
+  <meta name="description" content="Combine is still my favorite javascript/css combine and compress script. I posted a solution how to use it in a CakePHP application and here is a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://eabay.github.io/2009/11/19/cakephp-helper-for-rakaz-combine">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="http://feeds2.feedburner.com/erhanabay" rel="alternate" title="Erhan is typing..." type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.entry-content').fitVids();
+    });
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-266874-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Erhan is typing&#8230;</a></h1>
+  
+    <h2>WebDevelopment , PHP, Javascript, CakePHP, ExtJS</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds2.feedburner.com/erhanabay" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:eabay.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">CakePHP Helper for rakaz Combine</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-11-19T00:00:00+02:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://eabay.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Combine is still my favorite javascript/css combine and compress script.</p>
+
+<p>I <a href="/2009/01/29/using-rakaz-combine-with-your-cakephp-application/">posted</a> a solution how to use it in a CakePHP application and here is a little helper to make it more useful:</p>
+
+<figure class='code'><figcaption><span>app/views/helpers/combine.php</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">CombineHelper</span> <span class="k">extends</span> <span class="nx">AppHelper</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">public</span> <span class="nv">$helpers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Html&#39;</span><span class="p">,</span> <span class="s1">&#39;Javascript&#39;</span><span class="p">);</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="k">private</span> <span class="nv">$_pattern</span> <span class="o">=</span> <span class="s1">&#39;../combine.php?type=:type&amp;files=:files&#39;</span><span class="p">;</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="k">public</span> <span class="k">function</span> <span class="nf">js</span><span class="p">(</span><span class="nv">$files</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>      <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Javascript</span><span class="o">-&gt;</span><span class="na">link</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_format</span><span class="p">(</span><span class="nv">$files</span><span class="p">));</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="k">public</span> <span class="k">function</span> <span class="nf">css</span><span class="p">(</span><span class="nv">$files</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>      <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Html</span><span class="o">-&gt;</span><span class="na">css</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_format</span><span class="p">(</span><span class="nv">$files</span><span class="p">,</span> <span class="s1">&#39;css&#39;</span><span class="p">));</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="k">private</span> <span class="k">function</span> <span class="nf">_format</span><span class="p">(</span><span class="nv">$files</span> <span class="o">=</span> <span class="k">array</span><span class="p">(),</span> <span class="nv">$type</span> <span class="o">=</span> <span class="s1">&#39;javascript&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>      <span class="k">return</span> <span class="nx">String</span><span class="o">::</span><span class="na">insert</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_pattern</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="nv">$type</span><span class="p">,</span> <span class="s1">&#39;files&#39;</span> <span class="o">=&gt;</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="nv">$files</span><span class="p">)));</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Add it to controller&rsquo;s helpers property:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">MyController</span> <span class="k">extends</span> <span class="nx">AppController</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">public</span> <span class="nv">$helpers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Combine&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And call it by passing an array of file names in your view:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$combine</span><span class="o">-&gt;</span><span class="na">js</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+</span><span class='line'>    <span class="s1">&#39;javascript1.js&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s1">&#39;javascript2.js&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s1">&#39;javascript3.js&#39;</span>
+</span><span class='line'><span class="p">));</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$combine</span><span class="o">-&gt;</span><span class="na">css</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+</span><span class='line'>    <span class="s1">&#39;stylesheet1.css&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s1">&#39;stylesheet2.css&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s1">&#39;stylesheet3.css&#39;</span>
+</span><span class='line'><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Don&rsquo;t forget to add file extensions!</h3>
+
+<p>If you want to add only one file, you don&rsquo;t have to use combine helper. Directives added to <code>.htaccess</code> file let combine script to compress the file(<a href="/2009/01/29/using-rakaz-combine-with-your-cakephp-application/">See related post</a>). Just use <code>$javascript-&gt;link('filename')</code>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Erhan Abay</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2009-11-19T00:00:00+02:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:00 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/category/cakephp/'>cakephp</a>, <a class='category' href='/category/javascript/'>javascript</a>, <a class='category' href='/category/php/'>php</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://eabay.github.io/2009/11/19/cakephp-helper-for-rakaz-combine/" data-via="erhanabay" data-counturl="http://eabay.github.io/2009/11/19/cakephp-helper-for-rakaz-combine/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2009/11/12/nurturia-com-tr/" title="Previous Post: nurturia.com.tr">&laquo; nurturia.com.tr</a>
+      
+      
+        <a class="basic-alignment right" href="/2009/11/28/ext-direct-for-cakephp/" title="Next Post: Ext.Direct for CakePHP">Ext.Direct for CakePHP &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p><img class="center" src="//s.gravatar.com/avatar/ec3dd0c0beb4842f3c3ec38a5edaa001?s=160"></p>
+  <p>I am a partner at <a href="http://mc2.com.tr/">MC2</a>, a company delivering software and hardware solutions.</p>
+  <p>See my <a href="http://about.me/eabay">about.me page</a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/01/11/wordpress-plugin-gemius-tracking-code/">WordPress Plugin: Gemius Tracking Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/09/object-oriented-wordpress-plugin-development/">Object-Oriented WordPress Plugin Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/06/bitbucket-repo-sync-application/">Bitbucket Repo Sync Application</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/01/23/top10hardware-com/">TOP10Hardware.com</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2009/11/28/ext-direct-for-cakephp/">Ext.Direct for CakePHP</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/eabay">@eabay</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'eabay',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Erhan Abay -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'erhanabay';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://eabay.github.io/2009/11/19/cakephp-helper-for-rakaz-combine/';
+        var disqus_url = 'http://eabay.github.io/2009/11/19/cakephp-helper-for-rakaz-combine/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

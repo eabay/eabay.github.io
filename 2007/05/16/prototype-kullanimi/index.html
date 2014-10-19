@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Prototype kullanımı - Erhan is typing&#8230;</title>
+  <meta name="author" content="Erhan Abay">
+
+  
+  <meta name="description" content="Geçen yazımızda AJAX kütüphanesi olarak büyük ihtimal dojo kullanacağımızı söylemiştik. Ama küçük ihtimallerden birini seçerek devam etmeyi daha &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://eabay.github.io/2007/05/16/prototype-kullanimi">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="http://feeds2.feedburner.com/erhanabay" rel="alternate" title="Erhan is typing..." type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.entry-content').fitVids();
+    });
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-266874-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Erhan is typing&#8230;</a></h1>
+  
+    <h2>WebDevelopment , PHP, Javascript, CakePHP, ExtJS</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds2.feedburner.com/erhanabay" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:eabay.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Prototype kullanımı</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-05-16T15:00:00+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>3:00 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://eabay.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="right" src="/images/posts/prototype.png"></p>
+
+<p><a href="/2007/05/16/60lik-mi-70lik-mi/">Geçen yazımızda</a> AJAX kütüphanesi olarak büyük ihtimal dojo kullanacağımızı söylemiştik. Ama küçük ihtimallerden birini seçerek devam etmeyi daha uygun gördük. Prototype adlı kütüphaneden biraz bahsetmiştik. Bakalım fikrimiz neden değişmiş?</p>
+
+<!--more-->
+
+
+<p>Prototype kütüphanesi aslen AJAX&#8217;a hizmet etmek anlayışı ile oluşturulmamış. Onu bir javascript kütüphanesi olarak adlandırmak çok daha doğru olur. Çünkü AJAX fonksiyonları onun sadece bir kısmını oluşturuyor. Yanlış anlaşılmasın, AJAX için öyle çok da fonksiyonu yok. Ama bazı çatıların (open rico, script.aculo.us) temelini oluşturduğu ve işin genel işleyişini pekiştirmemiz için diğerlerinden çok daha iyi bir başlangıç noktası. Bazı okurlarımızın geri dönüşleri de bu kararı vermemizdeki etkenlerden bir tanesi. Şimdi hem biraz prorotype kütüphanesinden bahsedelim hem de küçük bir örnekle devam edelim. Bu arada projenin internet adresi prototype.conio.net. En son sürümünü (şu anda 1.4.0) buradan indirebilirsiniz.</p>
+
+<h2>Bazı faydalı fonksiyonlar</h2>
+
+<p>Kodlama ile uğraştığımızda sürekli olarak tekrarlanan kısımlar yazılımcıyı sıkar. Prototype içerisinde bu rahatsızlığı çözen birkaç ön tanımlı fonksiyon bulunuyor.</p>
+
+<h3>$()</h3>
+
+<p><code>document.getElementById()</code> fonksiyonu için bir kısa yol diyebiliriz. Sayfa içerisinde <code>id</code> özelliği eşleşen elemanı döndürür. Birden fazla <code>id</code> verilerek eşleşen elemanlara ait bir dizi oluşturulabilir.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">ilkBolum</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">bolum</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;bolum1&#39;</span><span class="p">);</span>
+</span><span class='line'>        <span class="nx">alert</span><span class="p">(</span><span class="nx">bolum</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">butunBolumler</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">bolumler</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;bolum1&#39;</span><span class="p">,</span><span class="s1">&#39;bolum2&#39;</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">bolumler</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">alert</span><span class="p">(</span><span class="nx">bolumler</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">innerHTML</span><span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;bolum1&quot;</span><span class="nt">&gt;</span>1. bölüm<span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;bolum2&quot;</span><span class="nt">&gt;</span>2. bölüm<span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;1. bölümde ne var?&quot;</span> <span class="na">onClick=</span><span class="s">&quot;ilkBolum();&quot;</span><span class="nt">&gt;&lt;br</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;Tüm bölümlerde ne var?&quot;</span> <span class="na">onClick=</span><span class="s">&quot;butunBolumler();&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Kod içerisinde ne yapıldığının üzerinden kısaca geçelim. <code>ilkBolum()</code> fonksiyonu sayfada <code>id</code> özelliği <code>bolum1</code> olan elemanı alıyor özelliğini ekrana uyarı olarak bastırıyor. <code>butunBölümler()</code> fonksiyonu <code>id</code> özellikleri <code>bolum1</code> ve <code>bolum2</code> olan elemanlardan bir dizi oluşturuyor ve bunları bir döngü içerisinde kullanarak aynı işi yapıyor. Bu fonksiyonların kullanımını tetikleyen de sayfadaki butonların tıklanması.</p>
+
+<h3>$A()</h3>
+
+<p><code>$A()</code> fonksiyonu gönderilen değeri diziye çevirir. Sahip olduğu çeşitli metodlar sayesinde dizi işlemlerinde işinizi kolaylaştırır. Sayfadaki elemanları dizi nesnelerine çevirip daha kolay işlemenizi sağlar.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">secenekleriGoster</span><span class="p">(){</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">liste</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;ajaxCatilari&#39;</span><span class="p">).</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;option&#39;</span><span class="p">);</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">secenekler</span> <span class="o">=</span> <span class="nx">$A</span><span class="p">(</span><span class="nx">liste</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nx">secenekler</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">secenek</span><span class="p">){</span>
+</span><span class='line'>            <span class="nx">alert</span><span class="p">(</span><span class="nx">secenek</span><span class="p">.</span><span class="nx">nodeName</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="nx">secenek</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;ajaxCatilari&quot;</span> <span class="na">size=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>Prototype<span class="nt">&lt;/option&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;8&quot;</span><span class="nt">&gt;</span>dojo<span class="nt">&lt;/option&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Backbase<span class="nt">&lt;/option&gt;</span>
+</span><span class='line'><span class="nt">&lt;/select&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;Seçenekleri Göster&quot;</span> <span class="na">onclick=</span><span class="s">&quot;secenekleriGoster();&quot;</span> <span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>$F()</h3>
+
+<p>Bu fonksiyon da bir önceki gibi kısa yol niteliğinde. &#8216;id&#8217; özelliği eşleşen form elemanının değerini döndürür.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">degerGoster</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">alert</span><span class="p">(</span><span class="nx">$F</span><span class="p">(</span><span class="s1">&#39;bilgiGirisi&#39;</span><span class="p">));</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;bilgiGirisi&quot;</span> <span class="na">value=</span><span class="s">&quot;Prototype işi biliyor...&quot;</span><span class="nt">&gt;&lt;br</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;Yukarıda ne yazıyor?&quot;</span> <span class="na">onclick=</span><span class="s">&quot;degerGoster();&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>$H()</h3>
+
+<p>Nesneleri dizilere benzeyen sayılabilir kargaşa (hash) nesnelerine dönüştürür. Cümle biraz anlaşılmaz duruyor ama örneğe baktığınızda anlaşılır olacaktır.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">kargasaCikar</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">nesne</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">anahtar1</span><span class="o">:</span> <span class="s2">&quot;deger1&quot;</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">anahtar2</span><span class="o">:</span> <span class="s2">&quot;deger2&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">kargasa</span> <span class="o">=</span> <span class="nx">$H</span><span class="p">(</span><span class="nx">nesne</span><span class="p">);</span>
+</span><span class='line'>        <span class="nx">alert</span><span class="p">(</span><span class="nx">kargasa</span><span class="p">.</span><span class="nx">toQueryString</span><span class="p">());</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;Kargaşa Çıkar&quot;</span> <span class="na">onclick=</span><span class="s">&quot;kargasaCikar();&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>$R()</h3>
+
+<p><code>new ObjectRange(altSınır, üstSınır, sınırlarHariç)</code> tarzı yazımın kısaltılmış hali diyebiliriz. Örnekteki kullanımda <code>each()</code> metodu yine prototype kütüphanesindeki sayılabilir nesnesinden bir metottur.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;sript&gt;</span>
+</span><span class='line'>    function say(){
+</span><span class='line'>        var aralik = $R(10, 20, false);
+</span><span class='line'>        aralik.each(function(deger, index){
+</span><span class='line'>            alert(deger);
+</span><span class='line'>        });
+</span><span class='line'>    }
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;10&#39;dan 20&#39;ye kadar say&quot;</span> <span class="na">onclick=</span><span class="s">&quot;say();&quot;</span> <span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Try.these()</h3>
+
+<p>Denediğiniz fonksiyonlardan biri çalışana kadar sırayla tümünü dener ve çalışan fonksiyonun değerini döndürür. Örneğin tarayıcılar arasındaki farklılık durumlarında veya farklı js sürümlerinde kullanışlı olabilir.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">hangiTarayici</span><span class="p">(){</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">XMLHttpRequest</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Mozilla, Safari, ...</span>
+</span><span class='line'>            <span class="nx">tarayici1</span> <span class="o">=</span> <span class="s2">&quot;Mozilla, Safari&quot;</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">ActiveXObject</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// IE</span>
+</span><span class='line'>            <span class="nx">tarayici2</span> <span class="o">=</span> <span class="s2">&quot;IE&quot;</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nx">alert</span><span class="p">(</span><span class="nx">Try</span><span class="p">.</span><span class="nx">these</span><span class="p">(</span>
+</span><span class='line'>            <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="nx">tarayici1</span><span class="p">;},</span>
+</span><span class='line'>            <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="nx">tarayici2</span><span class="p">;}</span>
+</span><span class='line'>        <span class="p">));</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;Hangi tarayıcıyı kullanıyorum&quot;</span> <span class="na">onclick=</span><span class="s">&quot;hangiTarayici();&quot;</span> <span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>AJAX nesnesi</h2>
+
+<p>Prototype kütüphanesinin buraya kadarki kısmı sadece işimizi kolaylaştırabilecek bazı fonksiyonlardan ibaretti. Halbuki bizim ilgi alanımız AJAX. O zaman kütüphanenin AJAX nesnesini mercek altına alabiliriz.</p>
+
+<p>Prototype içerisinde AJAX mantığını işletebileceğiniz aynı isimli nesneye ait bir kısım sınıflar yer alıyor. Bunların nasıl kullanıldığına bir bakalım.</p>
+
+<h3>Ajax.Request</h3>
+
+<p><code>Request</code> sınıfı <code>XMLHttpRequest</code> nesnesini oluşturma ve bağlantının başarılı olup olmadığını kontrol edip gelen cevabı işleme sürecini tarayıcı bağımsız olarak kontrol edebilmenizi sağlıyor.</p>
+
+<p>Örneğin bir sayfa tasarlıyorsunuz ve sayfada yer alan bir seçim listesinde yapılan değişiklik sonucu farklı bir form elemanını güncellemek istiyorsunuz. Güncelleme için de dinamik bir sayfadan gelen cevabı kullanacaksınız. Şimdi bu senaryoyu uygulayacağımız örneği hayata geçirelim ve ardından konuya devam edelim.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">ajaxCatiAdresi</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">ajaxCati</span> <span class="o">=</span> <span class="nx">$F</span><span class="p">(</span><span class="s1">&#39;AJAXCati&#39;</span><span class="p">);</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;ajax_cevap.php&#39;</span><span class="p">;</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">degistirgenler</span> <span class="o">=</span> <span class="s1">&#39;AJAXCati=&#39;</span> <span class="o">+</span> <span class="nx">ajaxCati</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">ajaxla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Ajax</span><span class="p">.</span><span class="nx">Request</span><span class="p">(</span>
+</span><span class='line'>                <span class="nx">url</span><span class="p">,</span>
+</span><span class='line'>                <span class="p">{</span>
+</span><span class='line'>                    <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span>
+</span><span class='line'>                    <span class="nx">parameters</span><span class="o">:</span> <span class="nx">degistirgenler</span><span class="p">,</span>
+</span><span class='line'>                    <span class="nx">onComplete</span><span class="o">:</span> <span class="nx">cevapGoster</span>
+</span><span class='line'>                <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">cevapGoster</span><span class="p">(</span><span class="nx">istek</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="c1">//put returned XML in the textarea</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;sonuc&#39;</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">istek</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">&quot;AJAXCati&quot;</span> <span class="na">size=</span><span class="s">&quot;3&quot;</span> <span class="na">id=</span><span class="s">&quot;AJAXCati&quot;</span> <span class="na">onchange=</span><span class="s">&quot;ajaxCatiAdresi()&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Prototype&quot;</span><span class="nt">&gt;</span>Prototype<span class="nt">&lt;/option&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;dojo&quot;</span><span class="nt">&gt;</span>dojo<span class="nt">&lt;/option&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Backbase&quot;</span><span class="nt">&gt;</span>Backbase<span class="nt">&lt;/option&gt;</span>
+</span><span class='line'><span class="nt">&lt;/select&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;sonuc&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;sonuc&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="na">size=</span><span class="s">&quot;60&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>İstek gönderdiğimiz dinamik sayfa için PHP ile yazdığımız aşağıdaki kodları kullandık. Hangi dilin kullanıldığı vs. gibi şeyler şu anda konumuz dışı ve bunlar sadece birer örnek niteliğinde.</p>
+
+<figure class='code'><figcaption><span>ajax_cevap.php</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">switch</span> <span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;AJAXCati&quot;</span><span class="p">])</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">case</span> <span class="s2">&quot;Prototype&quot;</span><span class="o">:</span>
+</span><span class='line'>       <span class="k">echo</span> <span class="s2">&quot;http://prototype.conio.net/&quot;</span><span class="p">;</span>
+</span><span class='line'>       <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">case</span> <span class="s2">&quot;dojo&quot;</span><span class="o">:</span>
+</span><span class='line'>       <span class="k">echo</span> <span class="s2">&quot;http://dojotoolkit.org/&quot;</span><span class="p">;</span>
+</span><span class='line'>       <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">case</span> <span class="s2">&quot;Backbase&quot;</span><span class="o">:</span>
+</span><span class='line'>       <span class="k">echo</span> <span class="s2">&quot;http://www.backbase.com/&quot;</span><span class="p">;</span>
+</span><span class='line'>       <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">default</span><span class="o">:</span>
+</span><span class='line'>       <span class="k">echo</span> <span class="s2">&quot;Lütfen listeden bir seçim yapın&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Gördüğünüz gibi listeden yapılan AJAX çatısı seçimi bize alttaki alanda adresini görüntülemekte. Bunun için öncelikli olarak <code>$F('AJAXCati')</code> ile seçimin değerini aldık. Daha sonra isteğimizi göndereceğimiz adresi tanımladık. Ardından göndereceğimiz değiştirgeni (Birden fazla olabilir. Bu durumda <code>&amp;#8220;+ &amp;#8216;&amp;degistirgen2=&amp;#8217; + deger2&amp;#8243;</code> şeklinde devam edecektik.) belirledik. <code>Ajax.Request</code> nesnemizden bir tane ajaxla değişkenine kopyaladık ve gerekli değiştirgenleri de aynı anda tanımladık. Talebi dinamik sayfaya iletmek için <code>GET</code> metodunu kullandık. Cevabın döndüğünden emin olmamızı sağlayan <code>onComplete</code> değiştirgeni için de <code>cevapGoster()</code> fonksiyonunu çağırılacak fonksiyon olarak belirledik. Bu fonksiyon içerisinde de gelen cevabı <code>id</code> özelliği <code>sonuc</code> olan kutunun değeri yapan satırı yazdık.</p>
+
+<p><code>Request</code> nesnesi içerisinde tanımlanabilecek bir iki özellik daha bulunuyor. Örneğin işlemin eş zamanlı olup olmayacağının belirlendiği <code>asynchronous</code> gibi (Değer olarak <code>true</code> veya <code>false</code> alabilir. Varsayılan değer <code>true</code>).</p>
+
+<blockquote><p>Bu yazı Ağustos 2006 tarihinde PC Tech dergisinde yayınlanmıştır.</p></blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Erhan Abay</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2007-05-16T15:00:00+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>3:00 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/category/ajax/'>ajax</a>, <a class='category' href='/category/javascript/'>javascript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://eabay.github.io/2007/05/16/prototype-kullanimi/" data-via="erhanabay" data-counturl="http://eabay.github.io/2007/05/16/prototype-kullanimi/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2007/05/16/60lik-mi-70lik-mi/" title="Previous Post: 60'lık mı 70'lik mi?">&laquo; 60&#8217;lık mı 70&#8217;lik mi?</a>
+      
+      
+        <a class="basic-alignment right" href="/2007/05/16/prototype-ile-form-gonderimi/" title="Next Post: Prototype ile form gönderimi">Prototype ile form gönderimi &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p><img class="center" src="//s.gravatar.com/avatar/ec3dd0c0beb4842f3c3ec38a5edaa001?s=160"></p>
+  <p>I am a partner at <a href="http://mc2.com.tr/">MC2</a>, a company delivering software and hardware solutions.</p>
+  <p>See my <a href="http://about.me/eabay">about.me page</a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/01/11/wordpress-plugin-gemius-tracking-code/">WordPress Plugin: Gemius Tracking Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/09/object-oriented-wordpress-plugin-development/">Object-Oriented WordPress Plugin Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/06/bitbucket-repo-sync-application/">Bitbucket Repo Sync Application</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/01/23/top10hardware-com/">TOP10Hardware.com</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2009/11/28/ext-direct-for-cakephp/">Ext.Direct for CakePHP</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/eabay">@eabay</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'eabay',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Erhan Abay -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'erhanabay';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://eabay.github.io/2007/05/16/prototype-kullanimi/';
+        var disqus_url = 'http://eabay.github.io/2007/05/16/prototype-kullanimi/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

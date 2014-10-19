@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: cakephp | Erhan is typing...]]></title>
+  <link href="http://eabay.github.io/category/cakephp/atom.xml" rel="self"/>
+  <link href="http://eabay.github.io/"/>
+  <updated>2014-10-19T03:12:33+03:00</updated>
+  <id>http://eabay.github.io/</id>
+  <author>
+    <name><![CDATA[Erhan Abay]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ext.Direct for CakePHP]]></title>
+    <link href="http://eabay.github.io/2009/11/28/ext-direct-for-cakephp/"/>
+    <updated>2009-11-28T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2009/11/28/ext-direct-for-cakephp</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CakePHP Helper for rakaz Combine]]></title>
+    <link href="http://eabay.github.io/2009/11/19/cakephp-helper-for-rakaz-combine/"/>
+    <updated>2009-11-19T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2009/11/19/cakephp-helper-for-rakaz-combine</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using rakaz Combine With Your CakePHP Application]]></title>
+    <link href="http://eabay.github.io/2009/01/29/using-rakaz-combine-with-your-cakephp-application/"/>
+    <updated>2009-01-29T14:00:00+02:00</updated>
+    <id>http://eabay.github.io/2009/01/29/using-rakaz-combine-with-your-cakephp-application</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CakePHP RequestHandler Extended]]></title>
+    <link href="http://eabay.github.io/2009/01/29/cakephp-requesthandler-extended/"/>
+    <updated>2009-01-29T13:00:00+02:00</updated>
+    <id>http://eabay.github.io/2009/01/29/cakephp-requesthandler-extended</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Make CakePHP Email Component Reusable]]></title>
+    <link href="http://eabay.github.io/2009/01/29/make-cakephp-email-component-reusable/"/>
+    <updated>2009-01-29T12:00:00+02:00</updated>
+    <id>http://eabay.github.io/2009/01/29/make-cakephp-email-component-reusable</id>
+  </entry>
+  
+</feed>

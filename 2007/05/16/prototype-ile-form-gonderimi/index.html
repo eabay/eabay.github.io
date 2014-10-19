@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Prototype ile form gönderimi - Erhan is typing&#8230;</title>
+  <meta name="author" content="Erhan Abay">
+
+  
+  <meta name="description" content="Geçen ay Prototype kütüphanesi hakkında giriş niteliğinde bir yazı ile karşınıza çıkmıştık. Bazı temel özelliklerinden söz ettiğimiz ve küçük &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://eabay.github.io/2007/05/16/prototype-ile-form-gonderimi">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="http://feeds2.feedburner.com/erhanabay" rel="alternate" title="Erhan is typing..." type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.entry-content').fitVids();
+    });
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-266874-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Erhan is typing&#8230;</a></h1>
+  
+    <h2>WebDevelopment , PHP, Javascript, CakePHP, ExtJS</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds2.feedburner.com/erhanabay" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:eabay.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Prototype ile form gönderimi</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-05-16T16:00:00+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>4:00 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://eabay.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="right" src="/images/posts/prototype.png"></p>
+
+<p><a href="/2007/05/16/prototype-kullanimi/">Geçen ay</a> Prototype kütüphanesi hakkında giriş niteliğinde bir yazı ile karşınıza çıkmıştık. Bazı temel özelliklerinden söz ettiğimiz ve küçük örnekler yaptığımız Javascript kütüphanesiyle bu ay bir kullanıcı kayıt formu yapacağız.</p>
+
+<!--more-->
+
+
+<p>Klasik web uygulamalarında form kullanıcı tarafından doldurulur ve sunucuya gönderilir. Eğer uygulamayı yazan kişi sunucu tarafında gelen verinin doğruluğunu kontrol ediyorsa istenmeyen bilginin düzenlenmesi için sayfa tekrar kullanıcıya iletilir. Bu sunucu-istemci paslaşması istenen bilgi elde edilene kadar sürer. En azından bir kere de olsa girdiğiniz kullanıcı adı kullanıldığı için farklı bir ad seçmenizi isteyen uyarıyla karşılaşmış, hatta bu yüzden doğru da olsa güvenlik nedeniyle tarayıcıya geri gönderilmeyen şifre ve şifre tekrar alanlarını defalarca doldurma durumuyla karşı karşıya gelmiş olmalısınız. Her defasında sunucu ve istemci arasındaki bu paslaşmada veri iletimini ve sinir krizini azaltacak AJAX&#8217;ın kullanımını bir örnek ile göstermeye çalıştık.</p>
+
+<p>Kütüphane olarak kullandığımız Prototype projesinin internet adresi <a href="http://prototype.conio.net">prototype.conio.net</a>. En son sürümünü (şu anda 1.4.0) buradan indirebilirsiniz.</p>
+
+<p>Uygulamamızın senaryosunda kullanıcı kayıt olabilmek için kullanıcı adı, şifre ve e-posta adresi bilgilerini doldurup <code>Gönder</code> butonuna tıklamalı. Butona tıklandıktan sonra veriler Ajax nesnesi ile sunucuya gönderiliyor ve hatalar ve başarılı gönderim bilgisi form bölümünün üstünde görüntüleniyor. Bu sırada form sürekli olarak değişmeden kalıyor. Uygulamamızın sadece fikir verici bir niteliği olduğunu tekrar hatırlatalım. Yani aynen alıp sitenizde kullanabileceğiniz bir uygulama değil.</p>
+
+<h2>Formu yapılandıralım</h2>
+
+<p>Senaryomuza uygun şekilde 3 giriş alanı ve bir butona sahip formu oluşturduk. Yazdığımızı görebilmek için şifre girişinde <code>input</code> öğesinin <code>type</code> özelliği için <code>password</code> yerine <code>text</code> kullandık. Ayrıca <code>Gönder</code> butonumuz da <code>type</code> özelliği <code>submit</code> yerine <code>button</code> değerine sahip. Fark ettiyseniz <code>form</code> öğesinin <code>action</code> özelliği <code>formGonder()</code> fonksiyonumuzu çağırıyor. Bunun nedeni ise <code>Enter</code> ile formun gönderilmesini istememize rağmen Opera 9&#8217;da bunun çalışması. IE 6 ve Firefox 1.5&#8217;te ise herhangi bir işlevi yok. Form öğesinin üst kısmında içi boş olan ve &#8216;id&#8217; özelliği &#8216;kayitSonucUyari&#8217; olan ve bizim sunucudan gelen mesajları görüntüleyeceğimiz bölüm yer alıyor. <code>body</code> öğesinin bitiminden hemen önce gördüğünüz <code>İşlem yapılıyor</code> mesajı alanı ise çok sık karşılaştığımız işlemin devam ettiğini gösteren bir uyarı. Sayfayı ilk açtığınızda butona tıklayana kadar bu mesajı göreceksiniz. Bu sorunun varlığından haberdarız ama Prototype örneklerinden almamıza rağmen çözüm üretemediğimizi itiraf etmek zorundayız :D. Ama ilk form gönderiminden sonra normal çalışıyor.</p>
+
+<h2>Javascript fonksiyonlarımızı oluşturalım</h2>
+
+<p><code>formGonder()</code> ve <code>cevap()</code> adlı iki adet fonksiyonumuz bulunuyor. İsimlerinde anlaşıldığı üzere biri formun gönderiminden diğeri de dönen cevaptan sorumlu. <code>formGonder()</code> fonksiyonunda öncelikle <code>kayitSonucUyari</code> değerli <code>id</code> özelliğine sahip bölümün herhangi bir içeriğe sahip olsa bile yeni bir gönderim talebinde görüntülenmemesi için CSS sınıfını <code>uyariGizli</code> olarak değiştiriyoruz (satır 39). Ardından da bir istek tamamlanmadan diğerinin gönderilmesini engellemek için <code>Gönder</code> butonumuzu kullanıma kapatıyoruz (satır 40). Devam eden satırlarda da geçen ay örneklerle açıkladığımız Ajax nesnesini kullanarak <code>kayit.php</code> sayfasina talebimizi gönderiyoruz.</p>
+
+<p><code>cevap()</code> fonksiyonu istek-cevap süreci tamamlandıktan sonra çağırılan yordam. İstek başlangıcında görünmez kıldığımız alanı bu kez <code>uyariKutu</code> CSS sınıfı ile şekillendirip içini de gelen yanıtla doldurup görüntülenmesini sağlıyoruz. Ardından da gönderim butonunu tekrar etkinleştirip yeni istek taleplerine açıyoruz.</p>
+
+<p>İşlem yapılıyor alanının nasıl kontrol edildiğini, yani <code>onCreate</code> olayı ile <code>Ajax</code> nesnesinin <code>Request</code> metodunun oluşturulmasında görüntülenip <code>onComplete</code> ile cevabın geldiğinde ve herhangi bir etkin bağlantının kalmadığından emin olunarak tekrar gizlenmesini 23. ve 35. satırlar arasındaki kod parçasından kontrol edebilirsiniz.</p>
+
+<figure class='code'><figcaption><span>kayit.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span>
+</span><span class='line'><span class="nt">&lt;html</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;head&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;title&gt;</span>Kayıt Formu<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>          <span class="nc">.uyariKutu</span> <span class="p">{</span>
+</span><span class='line'>              <span class="k">border</span><span class="o">:</span><span class="m">1px</span> <span class="k">solid</span> <span class="m">#FF0000</span><span class="p">;</span>
+</span><span class='line'>              <span class="k">color</span><span class="o">:</span><span class="m">#000000</span><span class="p">;</span>
+</span><span class='line'>              <span class="k">background-color</span><span class="o">:</span><span class="m">#FF3333</span>
+</span><span class='line'>          <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="nc">.uyariGizli</span> <span class="p">{</span>
+</span><span class='line'>              <span class="k">visibility</span><span class="o">:</span><span class="k">hidden</span>
+</span><span class='line'>          <span class="p">}</span>
+</span><span class='line'>      <span class="nt">&lt;/style&gt;</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;prototype-1.4.0.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>  
+</span><span class='line'>      <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="kd">var</span> <span class="nx">islemYapiliyorUyarisi</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>              <span class="nx">onCreate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>                  <span class="nx">Element</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="s1">&#39;islemYapiliyor&#39;</span><span class="p">);</span>
+</span><span class='line'>              <span class="p">},</span>
+</span><span class='line'>      
+</span><span class='line'>              <span class="nx">onComplete</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>                  <span class="k">if</span><span class="p">(</span><span class="nx">Ajax</span><span class="p">.</span><span class="nx">activeRequestCount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+</span><span class='line'>                      <span class="nx">Element</span><span class="p">.</span><span class="nx">hide</span><span class="p">(</span><span class="s1">&#39;islemYapiliyor&#39;</span><span class="p">);</span>
+</span><span class='line'>                  <span class="p">}</span>
+</span><span class='line'>              <span class="p">}</span>
+</span><span class='line'>          <span class="p">};</span>
+</span><span class='line'>      
+</span><span class='line'>          <span class="nx">Ajax</span><span class="p">.</span><span class="nx">Responders</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">islemYapiliyorUyarisi</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="kd">function</span> <span class="nx">formGonder</span><span class="p">()</span>
+</span><span class='line'>          <span class="p">{</span>
+</span><span class='line'>              <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;kayitSonucUyari&#39;</span><span class="p">).</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&quot;uyariGizli&quot;</span><span class="p">;</span>
+</span><span class='line'>              <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;gonder&#39;</span><span class="p">).</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>              
+</span><span class='line'>              <span class="kd">var</span> <span class="nx">kullaniciAdiDeger</span> <span class="o">=</span> <span class="nx">$F</span><span class="p">(</span><span class="s1">&#39;kullaniciAdi&#39;</span><span class="p">);</span>
+</span><span class='line'>              <span class="kd">var</span> <span class="nx">sifreDeger</span> <span class="o">=</span> <span class="nx">$F</span><span class="p">(</span><span class="s1">&#39;sifre&#39;</span><span class="p">);</span>
+</span><span class='line'>              <span class="kd">var</span> <span class="nx">epostaDeger</span> <span class="o">=</span> <span class="nx">$F</span><span class="p">(</span><span class="s1">&#39;eposta&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;kayit.php&#39;</span><span class="p">;</span>
+</span><span class='line'>              <span class="kd">var</span> <span class="nx">degistirgen</span> <span class="o">=</span> <span class="s1">&#39;kullaniciAdi=&#39;</span> <span class="o">+</span> <span class="nx">kullaniciAdiDeger</span> <span class="o">+</span> <span class="s1">&#39;&amp;sifre=&#39;</span> <span class="o">+</span> <span class="nx">sifreDeger</span> <span class="o">+</span> <span class="s1">&#39;&amp;eposta=&#39;</span> <span class="o">+</span> <span class="nx">epostaDeger</span><span class="p">;</span>
+</span><span class='line'>              
+</span><span class='line'>              <span class="kd">var</span> <span class="nx">ajaxla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Ajax</span><span class="p">.</span><span class="nx">Request</span><span class="p">(</span>
+</span><span class='line'>                          <span class="nx">url</span><span class="p">,</span>
+</span><span class='line'>                          <span class="p">{</span>
+</span><span class='line'>                              <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span>
+</span><span class='line'>                              <span class="nx">parameters</span><span class="o">:</span> <span class="nx">degistirgen</span><span class="p">,</span>
+</span><span class='line'>                              <span class="nx">onComplete</span><span class="o">:</span> <span class="nx">cevap</span>
+</span><span class='line'>                          <span class="p">});</span>
+</span><span class='line'>          <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="kd">function</span> <span class="nx">cevap</span><span class="p">(</span><span class="nx">istek</span><span class="p">)</span>
+</span><span class='line'>          <span class="p">{</span>
+</span><span class='line'>              
+</span><span class='line'>              <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;kayitSonucUyari&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">istek</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+</span><span class='line'>              <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;kayitSonucUyari&#39;</span><span class="p">).</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">&#39;uyariKutu&#39;</span><span class="p">;</span>
+</span><span class='line'>              
+</span><span class='line'>              <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;gonder&#39;</span><span class="p">).</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>          <span class="p">}</span>
+</span><span class='line'>      <span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="nt">&lt;body&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;kayitSonucUyari&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;kayit_formu&quot;</span> <span class="na">name=</span><span class="s">&quot;kayit_formu&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;javascript:formGonder()&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;fieldset&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;legend&gt;</span>Kullanıcı Adı<span class="nt">&lt;/legend&gt;</span>
+</span><span class='line'>      
+</span><span class='line'>              <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;kullaniciAdi&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;kullaniciAdi&quot;</span> <span class="na">size=</span><span class="s">&quot;30&quot;</span> <span class="na">maxlength=</span><span class="s">&quot;10&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;/fieldset&gt;</span>
+</span><span class='line'>          
+</span><span class='line'>          <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+</span><span class='line'>          
+</span><span class='line'>          <span class="nt">&lt;fieldset&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;legend&gt;</span>Şifre<span class="nt">&lt;/legend&gt;</span>
+</span><span class='line'>      
+</span><span class='line'>              <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;sifre&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;sifre&quot;</span> <span class="na">size=</span><span class="s">&quot;30&quot;</span> <span class="na">maxlength=</span><span class="s">&quot;10&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;/fieldset&gt;</span>
+</span><span class='line'>      
+</span><span class='line'>          <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+</span><span class='line'>          
+</span><span class='line'>          <span class="nt">&lt;fieldset&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;legend&gt;</span>E-posta<span class="nt">&lt;/legend&gt;</span>
+</span><span class='line'>      
+</span><span class='line'>              <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;eposta&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;eposta&quot;</span> <span class="na">size=</span><span class="s">&quot;30&quot;</span> <span class="na">maxlength=</span><span class="s">&quot;10&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;/fieldset&gt;</span>
+</span><span class='line'>      
+</span><span class='line'>          <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;gonder&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">id=</span><span class="s">&quot;gonder&quot;</span> <span class="na">value=</span><span class="s">&quot;Gönder&quot;</span> <span class="na">onclick=</span><span class="s">&quot;formGonder()&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/form&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;islemYapiliyor&#39;</span> <span class="na">align=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&#39;yukleniyor.gif&#39;</span> <span class="na">align=</span><span class="s">&quot;absmiddle&quot;</span><span class="nt">&gt;</span> İşlem yapılıyor...<span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>PHP ile sunucudan yanıt</h2>
+
+<p>Sunucu tarafından formun işlenmesi ve yanıtın verilmesi sürecini kayit.php sayfası ile gerçekleştirdik. Bu kod çok özentili olmamakla birlikte kesinlikle gerçek anlamda sitelerde kullanılmamalıdır. Gelen veri kontrolleri istenilen verinin türüne ve güvenlik seviyesine göre çok daha özenli ve dikkatli yazılmalı ve defalarca test edilmelidir. Ayrıca klasik bir kayıt işleminde veritabanı ile ilgili de bir dizi işlemin gerçekleştirilmesi gerekiyor. Bizim asıl odaklandığımız Ajax olduğundan bu konuları yüzeysel geçmeyi tercih edeceğiz.</p>
+
+<figure class='code'><figcaption><span>kayit.php</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'><span class="nv">$kullaniciAdi</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;kullaniciAdi&quot;</span><span class="p">];</span>
+</span><span class='line'><span class="nv">$sifre</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;sifre&quot;</span><span class="p">];</span>
+</span><span class='line'><span class="nv">$eposta</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;eposta&quot;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$hata</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nv">$kullaniciAdi</span> <span class="o">==</span> <span class="s2">&quot;pctech&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nv">$hata</span> <span class="o">=</span> <span class="s2">&quot;&lt;li&gt;Bu kullanıcı adı başka biri tarafından alınmış. Lütfen farklı bir tane deneyin.&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">elseif</span><span class="p">(</span><span class="nv">$kullaniciAdi</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nv">$hata</span> <span class="o">=</span> <span class="nv">$hata</span> <span class="o">.</span> <span class="s2">&quot;&lt;li&gt;Kullanıcı adı boş bırakılamaz&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="s2">&quot;pctech&quot;</span> <span class="o">==</span> <span class="nv">$sifre</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nv">$hata</span> <span class="o">=</span> <span class="nv">$hata</span> <span class="o">.</span> <span class="s2">&quot;&lt;li&gt;Hatalı şifre&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">elseif</span><span class="p">(</span><span class="nv">$sifre</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nv">$hata</span> <span class="o">=</span> <span class="nv">$hata</span> <span class="o">.</span> <span class="s2">&quot;&lt;li&gt;Şifre boş bırakılamaz&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nv">$eposta</span> <span class="o">==</span> <span class="s2">&quot;pctech&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nv">$hata</span> <span class="o">=</span>  <span class="nv">$hata</span> <span class="o">.</span> <span class="s2">&quot;&lt;li&gt;Hatalı eposta adresi&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">elseif</span><span class="p">(</span><span class="nv">$eposta</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nv">$hata</span> <span class="o">=</span> <span class="nv">$hata</span> <span class="o">.</span> <span class="s2">&quot;&lt;li&gt;E-posta boş bırakılamaz&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nv">$hata</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">echo</span><span class="p">(</span><span class="s2">&quot;Aşağıdaki hatalar bulundu:&lt;ul&gt;&quot;</span><span class="o">.</span><span class="nv">$hata</span><span class="o">.</span><span class="s2">&quot;&lt;/ul&gt;&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">echo</span><span class="p">(</span><span class="s2">&quot;Bilgileriniz bize ulaşmıştır...&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>Bu yazı Eylül 2006 tarihinde PC Tech dergisinde yayınlanmıştır.</p></blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Erhan Abay</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2007-05-16T16:00:00+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>4:00 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/category/ajax/'>ajax</a>, <a class='category' href='/category/javascript/'>javascript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://eabay.github.io/2007/05/16/prototype-ile-form-gonderimi/" data-via="erhanabay" data-counturl="http://eabay.github.io/2007/05/16/prototype-ile-form-gonderimi/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2007/05/16/prototype-kullanimi/" title="Previous Post: Prototype kullanımı">&laquo; Prototype kullanımı</a>
+      
+      
+        <a class="basic-alignment right" href="/2007/05/17/prototype-pencere-sinifi/" title="Next Post: Prototype pencere sınıfı">Prototype pencere sınıfı &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p><img class="center" src="//s.gravatar.com/avatar/ec3dd0c0beb4842f3c3ec38a5edaa001?s=160"></p>
+  <p>I am a partner at <a href="http://mc2.com.tr/">MC2</a>, a company delivering software and hardware solutions.</p>
+  <p>See my <a href="http://about.me/eabay">about.me page</a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/01/11/wordpress-plugin-gemius-tracking-code/">WordPress Plugin: Gemius Tracking Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/09/object-oriented-wordpress-plugin-development/">Object-Oriented WordPress Plugin Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/06/bitbucket-repo-sync-application/">Bitbucket Repo Sync Application</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/01/23/top10hardware-com/">TOP10Hardware.com</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2009/11/28/ext-direct-for-cakephp/">Ext.Direct for CakePHP</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/eabay">@eabay</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'eabay',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Erhan Abay -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'erhanabay';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://eabay.github.io/2007/05/16/prototype-ile-form-gonderimi/';
+        var disqus_url = 'http://eabay.github.io/2007/05/16/prototype-ile-form-gonderimi/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

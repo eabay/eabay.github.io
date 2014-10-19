@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>script.aculo.us - Erhan is typing&#8230;</title>
+  <meta name="author" content="Erhan Abay">
+
+  
+  <meta name="description" content="Geçen ayki prototype pencere sınıfı örneğinden sonra sıradaki prototype tabanlı kütüphanemiz script.aculo.us. script.aculo.us Web 2.0 uygulamaları &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://eabay.github.io/2007/05/17/scriptaculous">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="http://feeds2.feedburner.com/erhanabay" rel="alternate" title="Erhan is typing..." type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.entry-content').fitVids();
+    });
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-266874-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Erhan is typing&#8230;</a></h1>
+  
+    <h2>WebDevelopment , PHP, Javascript, CakePHP, ExtJS</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds2.feedburner.com/erhanabay" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:eabay.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">script.aculo.us</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-05-17T13:00:00+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>1:00 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://eabay.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="/images/posts/scriptaculous_logo.png"></p>
+
+<p>Geçen ayki prototype pencere sınıfı örneğinden sonra sıradaki prototype tabanlı kütüphanemiz script.aculo.us. script.aculo.us Web 2.0 uygulamaları geliştirenlerin projelerine hoş efektler ekleyebilecekleri bir javascript kütüphanesi.</p>
+
+<!--more-->
+
+
+<p>Uzun bir zamandır dergimizde sizlere AJAX konusunda çeşitli bilgiler vermeye, örnekler ile kütüphaneleri nasıl kullanabileceğinize dair örnekler vermeye çalışıyoruz. Türkçe olarak internette çok kısıtlı içeriğin yer aldığı bu konuda PC Tech olarak sizlere uzman düzeyinden ziyade başlangıç düzeyi bilgiler vererek en azından işin bir ucundan AJAX bulaşmanızı ve geleceğin web uygulamalarını geliştirenler arasında yer alabilmenizi sağlamak asıl amacımız. Balık tutmayı öğretmek balık vermekten iyidir. Eğer bu yeni akıma dahil olduysanız ve kendi uygulamalarınızı geliştirme süreci içerisindeyseniz size Türkçe bir AJAX grubuna yönlendirelim. <em>Ajax Nedir</em> adlı bu gruba <a href="http://groups.google.com/group/ajaxnedir">üye olabilirsiniz</a>. Emekleme aşamasındaki bu kullanıcı topluluğunun ilerlemesine katkıda bulunmak isteyenlere duyurulur. İngilizce içerik içinse ajaxian.com&#8217;u takip ederek gelişmelerden haberdar olabilirsiniz.</p>
+
+<p>Şimdi gelelim asıl konumuza, script.aculo.us. Yine söylemekten kendimizi alamayacağız ama script.aculo.us prototype çatısı üzerine kurulmuş ve tabir-i caizse yanarlı dönerli sayfalar tasarlamak için birçok görsel efekti size sunan bir kütüphane. Kütüphane içerisinde efektler yanında sürükle-bırak, sıralama, otomatik tamamlama gibi işlerinizi kolaylaştıracak kontroller de yer alıyor. Ayrıca DOM elemanlarını (daha açık olmak gerekirse HTML tarzı kodları) üretebilen özelliğini de dinamik olarak sayfa içi güncelleme sırasında kullanabilirsiniz.</p>
+
+<h2>Kullanım</h2>
+
+<p><a href="http://script.aculo.us">http://script.aculo.us</a> adresinden indirebileceğiniz kütüphanenin arşiv dosyasında birçok JS dosyası yer alıyor. script.aculo.us kütüphanesinin doğru çalışması için gerekenlerden <code>prototype.js</code>, <code>scriptaculous.js</code>, <code>builder.js</code>, <code>effects.js</code>, <code>dragdrop.js</code>, <code>slider.js</code> and <code>controls.js</code> dosyalarını bir klasöre aktarın ve script.aculo.us kullanmak istediğiniz sayfanın <code>head</code> etiketi içerisinde bağlantı verin.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;js/prototype.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;js/scriptaculous.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>scriptaculous.js</code> dosyası varsayılan olarak tüm diğer javascript dosyalarını yükler. Eğer sayfa içerisinde sadece kullanmak istediğiniz özelliğe ait dosyaları yüklemek isterseniz kodu aşağıdaki gibi düzenleyebilirsiniz.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;js/scriptaculous.js?load=effects,dragdrop&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Burada virgüller ile ayrılmış değerler klasöre kopyaladığınız dosyaların isimlerinden ibaret. Örnekler vermeye başladıkça hangi dosyanın nerede kullanıldığını daha rahat anlayacaksınız. Ama dikkat edilmesi gereken nokta bu paketlerin (özelliklerin ayrı olarak dosyalanmasından dolayı bu kelimeyi tercih ettik) birbiri ile olan bağımlılık durumunun gözden kaçırılmaması.</p>
+
+<p>Bir script.aculo.us efekti kullanmak istediğimizde bunun iki yolu var. Birincisi istediğimiz fonksiyonu çağırmak;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Effect</span><span class="p">.</span><span class="nx">Fade</span><span class="p">(</span><span class="s1">&#39;element_id&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Diğeri de sayfa elemanı özelliklerinde istediğimiz efektin sınıfından birini kopyalayarak olaya bağlamak.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">onclick=</span><span class="s">&quot;Effect.Shake(this)&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    Salla beni
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>İlk yöntemde sayfa tarayıcı tarafından yorumlanırken bu kısma gelindiğinde javascript kodu da çalıştırılacak, ikinci de ise DIV ile sınırlandırılan bölgeye tıklandığında efekt bu etikete uygulanacak.</p>
+
+<p>Uygulanabilecek tüm efektlerin listesi şu şekilde:</p>
+
+<ul>
+<li>Effect.Highlight</li>
+<li>Effect.MoveBy</li>
+<li>Effect.Opacity</li>
+<li>Effect.Parallel</li>
+<li>Effect.Scale</li>
+<li>Effect.Appear</li>
+<li>Effect.BlindDown</li>
+<li>Effect.BlindUp</li>
+<li>Effect.DropOut</li>
+<li>Effect.Fade</li>
+<li>Effect.Fold</li>
+<li>Effect.Grow</li>
+<li>Effect.Puff</li>
+<li>Effect.Pulsate</li>
+<li>Effect.Shake</li>
+<li>Effect.Shrink</li>
+<li>Effect.SlideDown</li>
+<li>Effect.SlideUp</li>
+<li>Effect.Squish</li>
+<li>Effect.SwitchOff</li>
+</ul>
+
+
+<p>Tüm efektlerin nasıl çalıştığını <a href="http://wiki.script.aculo.us/scriptaculous/show/CombinationEffectsDemo">http://wiki.script.aculo.us/scriptaculous/show/CombinationEffectsDemo</a> adresinden kontrol edebilirsiniz.</p>
+
+<p>Bir efekte değiştirgen parametre ile değer geçirmediğiniz sürece varsayılan değerler ile işini yapacaktır. Dilerseniz bu parametrelerin neler olduğuna da bir bakalım.</p>
+
+<p>Bir efektin genel kullanımı</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">new</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">EffektAdi</span><span class="p">(</span><span class="nx">element_id</span><span class="p">,</span> <span class="nx">gerekli</span><span class="o">-</span><span class="nx">parametreler</span> <span class="p">[,</span> <span class="nx">secenekler</span><span class="p">]);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>şeklindedir. Her efekt için gerekli parametre yok. Kullanılan parametreler ve seçenekleri örneklerde geçtiğinde açıklamaya çalışacağız.</p>
+
+<p>Küçük bir örnek vermek gerekirse de</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">new</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">Opacity</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span><span class="nx">duration</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nx">from</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nx">to</span><span class="o">:</span> <span class="mf">0.0</span><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Kodu bir olaya bağlamak olarak verdiğimiz 2 yöntemdeki gibi bir kullanımla sayfa elemanını (örneğin <code>div</code>) 0.5 saniye içinde görünmez hale getirecektir <code>0.0</code> değerini 0&#8217;la 1 arasında bir değer olarak belirlerseniz de şeffaf bir görünüm elde edebilirsiniz. Ya da <code>from</code> seçeneği sayısal değer olarak <code>to</code> seçeneğinden daha küçük olursa şeffaflığı azalan bir görünüm oluşacaktır.</p>
+
+<p>Aslında bu sayı AJAX yazısı biraz kısa gibi oldu ama script.aculo.us ile en az 1-2 sayı daha uğraşacağımızı göz önünde bulundurduğumuzda biraz sindirerek gitmek gerektiğini düşündük. O yüzden efektlerin nasıl kullanıldığına dair ısınma turlarını içeren bu yazının ardından kontrolleri de katarak Web 2.0&#8217;a yakışır sayfaları tasarlamayı sonraya bırakmak istedik. Bu ay örnekler olmadığından size örnekleri test edebileceğiniz bir adres de veremiyoruz. Ama bir sürprizimiz var! Pctech.com.tr yenilendi. Aslında bu satırları yazarken son rötuşlar yapılmaya devam ediliyor bu yüzden aksilik çıkmazsa diye sonuna eklememiz gerek. Ama yeni haliyle beraber daha güncel ve dolu dolu bir pctech.com.tr&#8217;de de AJAX ile olan sohbetlerimize yer vermeyi düşünüyoruz. İçerik olarak iddialı olacağımızı şimdiden söylemek isterim. Ödev yok, paydos! :)</p>
+
+<h2>Desteklenen Tarayıcılar</h2>
+
+<ul>
+<li>Microsoft Internet Explorer 6.0+ (Windows için)</li>
+<li>Mozilla Firefox 1.0+/Mozilla 1.7+</li>
+<li>Apple Safari 1.2+</li>
+<li>Konqueror</li>
+<li>Camino</li>
+<li>Opera 7.54 (AJAX ve şeffaflık kullanan efektler desteklenmiyor)</li>
+<li>Opera 8 (şeffaflık kullanan efektler desteklenmiyor)</li>
+<li>Opera 9+</li>
+</ul>
+
+
+<blockquote><p>Bu yazı Kasım 2006 tarihinde PC Tech dergisinde yayınlanmıştır.</p></blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Erhan Abay</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2007-05-17T13:00:00+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>1:00 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/category/ajax/'>ajax</a>, <a class='category' href='/category/javascript/'>javascript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://eabay.github.io/2007/05/17/scriptaculous/" data-via="erhanabay" data-counturl="http://eabay.github.io/2007/05/17/scriptaculous/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2007/05/17/prototype-pencere-sinifi/" title="Previous Post: Prototype pencere sınıfı">&laquo; Prototype pencere sınıfı</a>
+      
+      
+        <a class="basic-alignment right" href="/2007/05/17/scriptaculous-efektleri/" title="Next Post: script.aculo.us Efektleri">script.aculo.us Efektleri &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p><img class="center" src="//s.gravatar.com/avatar/ec3dd0c0beb4842f3c3ec38a5edaa001?s=160"></p>
+  <p>I am a partner at <a href="http://mc2.com.tr/">MC2</a>, a company delivering software and hardware solutions.</p>
+  <p>See my <a href="http://about.me/eabay">about.me page</a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/01/11/wordpress-plugin-gemius-tracking-code/">WordPress Plugin: Gemius Tracking Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/09/object-oriented-wordpress-plugin-development/">Object-Oriented WordPress Plugin Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/01/06/bitbucket-repo-sync-application/">Bitbucket Repo Sync Application</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/01/23/top10hardware-com/">TOP10Hardware.com</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2009/11/28/ext-direct-for-cakephp/">Ext.Direct for CakePHP</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/eabay">@eabay</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'eabay',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Erhan Abay -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'erhanabay';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://eabay.github.io/2007/05/17/scriptaculous/';
+        var disqus_url = 'http://eabay.github.io/2007/05/17/scriptaculous/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

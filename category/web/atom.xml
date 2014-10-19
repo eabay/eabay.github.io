@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: web | Erhan is typing...]]></title>
+  <link href="http://eabay.github.io/category/web/atom.xml" rel="self"/>
+  <link href="http://eabay.github.io/"/>
+  <updated>2014-10-19T03:12:33+03:00</updated>
+  <id>http://eabay.github.io/</id>
+  <author>
+    <name><![CDATA[Erhan Abay]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TOP10Hardware.com]]></title>
+    <link href="http://eabay.github.io/2010/01/23/top10hardware-com/"/>
+    <updated>2010-01-23T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2010/01/23/top10hardware-com</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Top10 Hardware OC Yarışması]]></title>
+    <link href="http://eabay.github.io/2009/10/13/top10-hardware-oc-yarismasi/"/>
+    <updated>2009-10-13T00:00:00+03:00</updated>
+    <id>http://eabay.github.io/2009/10/13/top10-hardware-oc-yarismasi</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GOOGLE TÜRKÇE ÖĞRENDİ (GİBİ)]]></title>
+    <link href="http://eabay.github.io/2009/02/02/google-turkce-ogrendi-gibi/"/>
+    <updated>2009-02-02T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2009/02/02/google-turkce-ogrendi-gibi</id>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google has doubts, even for itself]]></title>
+    <link href="http://eabay.github.io/2009/01/31/google-has-doubts-even-for-itself/"/>
+    <updated>2009-01-31T00:00:00+02:00</updated>
+    <id>http://eabay.github.io/2009/01/31/google-has-doubts-even-for-itself</id>
+  </entry>
+  
+</feed>
