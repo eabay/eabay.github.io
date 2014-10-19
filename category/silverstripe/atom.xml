@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: silverstripe | Erhan is typing...]]></title>
-  <link href="http://eabay.github.io/category/silverstripe/atom.xml" rel="self"/>
-  <link href="http://eabay.github.io/"/>
-  <updated>2014-10-19T03:12:33+03:00</updated>
-  <id>http://eabay.github.io/</id>
+  <link href="http://erhanabay.com/category/silverstripe/atom.xml" rel="self"/>
+  <link href="http://erhanabay.com/"/>
+  <updated>2014-10-19T03:45:27+03:00</updated>
+  <id>http://erhanabay.com/</id>
   <author>
     <name><![CDATA[Erhan Abay]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Image Rotator For Your SilverStripe Application]]></title>
-    <link href="http://eabay.github.io/2009/01/30/image-rotator-for-your-silverstripe-application/"/>
+    <link href="http://erhanabay.com/2009/01/30/image-rotator-for-your-silverstripe-application/"/>
     <updated>2009-01-30T00:00:00+02:00</updated>
-    <id>http://eabay.github.io/2009/01/30/image-rotator-for-your-silverstripe-application</id>
+    <id>http://erhanabay.com/2009/01/30/image-rotator-for-your-silverstripe-application</id>
   </entry>
   
 </feed>

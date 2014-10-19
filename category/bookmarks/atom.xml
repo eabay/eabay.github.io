@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: bookmarks | Erhan is typing...]]></title>
-  <link href="http://eabay.github.io/category/bookmarks/atom.xml" rel="self"/>
-  <link href="http://eabay.github.io/"/>
-  <updated>2014-10-19T03:12:33+03:00</updated>
-  <id>http://eabay.github.io/</id>
+  <link href="http://erhanabay.com/category/bookmarks/atom.xml" rel="self"/>
+  <link href="http://erhanabay.com/"/>
+  <updated>2014-10-19T03:45:27+03:00</updated>
+  <id>http://erhanabay.com/</id>
   <author>
     <name><![CDATA[Erhan Abay]]></name>
     
@@ -15,37 +15,37 @@
   
   <entry>
     <title type="html"><![CDATA[nurturia.com.tr]]></title>
-    <link href="http://eabay.github.io/2009/11/12/nurturia-com-tr/"/>
+    <link href="http://erhanabay.com/2009/11/12/nurturia-com-tr/"/>
     <updated>2009-11-12T00:00:00+02:00</updated>
-    <id>http://eabay.github.io/2009/11/12/nurturia-com-tr</id>
+    <id>http://erhanabay.com/2009/11/12/nurturia-com-tr</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[FrameworkScanner: Global namespace checker]]></title>
-    <link href="http://eabay.github.io/2009/10/20/frameworkscanner-global-namespace-checker/"/>
+    <link href="http://erhanabay.com/2009/10/20/frameworkscanner-global-namespace-checker/"/>
     <updated>2009-10-20T00:00:00+03:00</updated>
-    <id>http://eabay.github.io/2009/10/20/frameworkscanner-global-namespace-checker</id>
+    <id>http://erhanabay.com/2009/10/20/frameworkscanner-global-namespace-checker</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Do you need adblock detection?]]></title>
-    <link href="http://eabay.github.io/2009/07/28/do-you-need-adblock-detection/"/>
+    <link href="http://erhanabay.com/2009/07/28/do-you-need-adblock-detection/"/>
     <updated>2009-07-28T00:00:00+03:00</updated>
-    <id>http://eabay.github.io/2009/07/28/do-you-need-adblock-detection</id>
+    <id>http://erhanabay.com/2009/07/28/do-you-need-adblock-detection</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA["How I Explained REST to My Wife"]]></title>
-    <link href="http://eabay.github.io/2009/07/03/how-i-explained-rest-to-my-wife/"/>
+    <link href="http://erhanabay.com/2009/07/03/how-i-explained-rest-to-my-wife/"/>
     <updated>2009-07-03T00:00:00+03:00</updated>
-    <id>http://eabay.github.io/2009/07/03/how-i-explained-rest-to-my-wife</id>
+    <id>http://erhanabay.com/2009/07/03/how-i-explained-rest-to-my-wife</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Down for everyone or just me?]]></title>
-    <link href="http://eabay.github.io/2009/02/09/down-for-everyone-or-just-me/"/>
+    <link href="http://erhanabay.com/2009/02/09/down-for-everyone-or-just-me/"/>
     <updated>2009-02-09T00:00:00+02:00</updated>
-    <id>http://eabay.github.io/2009/02/09/down-for-everyone-or-just-me</id>
+    <id>http://erhanabay.com/2009/02/09/down-for-everyone-or-just-me</id>
   </entry>
   
 </feed>

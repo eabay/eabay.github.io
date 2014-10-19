@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: ajax | Erhan is typing...]]></title>
-  <link href="http://eabay.github.io/category/ajax/atom.xml" rel="self"/>
-  <link href="http://eabay.github.io/"/>
-  <updated>2014-10-19T03:12:33+03:00</updated>
-  <id>http://eabay.github.io/</id>
+  <link href="http://erhanabay.com/category/ajax/atom.xml" rel="self"/>
+  <link href="http://erhanabay.com/"/>
+  <updated>2014-10-19T03:45:27+03:00</updated>
+  <id>http://erhanabay.com/</id>
   <author>
     <name><![CDATA[Erhan Abay]]></name>
     
@@ -15,37 +15,37 @@
   
   <entry>
     <title type="html"><![CDATA[script.aculo.us Efektleri]]></title>
-    <link href="http://eabay.github.io/2007/05/17/scriptaculous-efektleri/"/>
+    <link href="http://erhanabay.com/2007/05/17/scriptaculous-efektleri/"/>
     <updated>2007-05-17T14:00:00+03:00</updated>
-    <id>http://eabay.github.io/2007/05/17/scriptaculous-efektleri</id>
+    <id>http://erhanabay.com/2007/05/17/scriptaculous-efektleri</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[script.aculo.us]]></title>
-    <link href="http://eabay.github.io/2007/05/17/scriptaculous/"/>
+    <link href="http://erhanabay.com/2007/05/17/scriptaculous/"/>
     <updated>2007-05-17T13:00:00+03:00</updated>
-    <id>http://eabay.github.io/2007/05/17/scriptaculous</id>
+    <id>http://erhanabay.com/2007/05/17/scriptaculous</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Prototype pencere sınıfı]]></title>
-    <link href="http://eabay.github.io/2007/05/17/prototype-pencere-sinifi/"/>
+    <link href="http://erhanabay.com/2007/05/17/prototype-pencere-sinifi/"/>
     <updated>2007-05-17T12:00:00+03:00</updated>
-    <id>http://eabay.github.io/2007/05/17/prototype-pencere-sinifi</id>
+    <id>http://erhanabay.com/2007/05/17/prototype-pencere-sinifi</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Prototype ile form gönderimi]]></title>
-    <link href="http://eabay.github.io/2007/05/16/prototype-ile-form-gonderimi/"/>
+    <link href="http://erhanabay.com/2007/05/16/prototype-ile-form-gonderimi/"/>
     <updated>2007-05-16T16:00:00+03:00</updated>
-    <id>http://eabay.github.io/2007/05/16/prototype-ile-form-gonderimi</id>
+    <id>http://erhanabay.com/2007/05/16/prototype-ile-form-gonderimi</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Prototype kullanımı]]></title>
-    <link href="http://eabay.github.io/2007/05/16/prototype-kullanimi/"/>
+    <link href="http://erhanabay.com/2007/05/16/prototype-kullanimi/"/>
     <updated>2007-05-16T15:00:00+03:00</updated>
-    <id>http://eabay.github.io/2007/05/16/prototype-kullanimi</id>
+    <id>http://erhanabay.com/2007/05/16/prototype-kullanimi</id>
   </entry>
   
 </feed>

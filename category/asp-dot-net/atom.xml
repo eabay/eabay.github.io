@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: asp.net | Erhan is typing...]]></title>
-  <link href="http://eabay.github.io/category/asp-dot-net/atom.xml" rel="self"/>
-  <link href="http://eabay.github.io/"/>
-  <updated>2014-10-19T03:12:33+03:00</updated>
-  <id>http://eabay.github.io/</id>
+  <link href="http://erhanabay.com/category/asp-dot-net/atom.xml" rel="self"/>
+  <link href="http://erhanabay.com/"/>
+  <updated>2014-10-19T03:45:27+03:00</updated>
+  <id>http://erhanabay.com/</id>
   <author>
     <name><![CDATA[Erhan Abay]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ext.Direct for ASP.NET MVC]]></title>
-    <link href="http://eabay.github.io/2009/07/01/ext-direct-for-asp-net-mvc/"/>
+    <link href="http://erhanabay.com/2009/07/01/ext-direct-for-asp-net-mvc/"/>
     <updated>2009-07-01T12:00:00+03:00</updated>
-    <id>http://eabay.github.io/2009/07/01/ext-direct-for-asp-net-mvc</id>
+    <id>http://erhanabay.com/2009/07/01/ext-direct-for-asp-net-mvc</id>
   </entry>
   
 </feed>

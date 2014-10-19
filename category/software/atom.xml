@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: software | Erhan is typing...]]></title>
-  <link href="http://eabay.github.io/category/software/atom.xml" rel="self"/>
-  <link href="http://eabay.github.io/"/>
-  <updated>2014-10-19T03:12:33+03:00</updated>
-  <id>http://eabay.github.io/</id>
+  <link href="http://erhanabay.com/category/software/atom.xml" rel="self"/>
+  <link href="http://erhanabay.com/"/>
+  <updated>2014-10-19T03:45:27+03:00</updated>
+  <id>http://erhanabay.com/</id>
   <author>
     <name><![CDATA[Erhan Abay]]></name>
     
@@ -15,30 +15,30 @@
   
   <entry>
     <title type="html"><![CDATA[Windows 7 port 80 issue]]></title>
-    <link href="http://eabay.github.io/2009/08/11/windows-7-port-80-issue/"/>
+    <link href="http://erhanabay.com/2009/08/11/windows-7-port-80-issue/"/>
     <updated>2009-08-11T00:00:00+03:00</updated>
-    <id>http://eabay.github.io/2009/08/11/windows-7-port-80-issue</id>
+    <id>http://erhanabay.com/2009/08/11/windows-7-port-80-issue</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Mesajlaşma + E-posta + Sosyal Ağlar = Digsby]]></title>
-    <link href="http://eabay.github.io/2009/01/28/mesajlasma-e-posta-sosyal-aglar-digsby/"/>
+    <link href="http://erhanabay.com/2009/01/28/mesajlasma-e-posta-sosyal-aglar-digsby/"/>
     <updated>2009-01-28T00:00:00+02:00</updated>
-    <id>http://eabay.github.io/2009/01/28/mesajlasma-e-posta-sosyal-aglar-digsby</id>
+    <id>http://erhanabay.com/2009/01/28/mesajlasma-e-posta-sosyal-aglar-digsby</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Seçici-geçirgen yazılımlar (EBEVEYN KONTROLÜ)]]></title>
-    <link href="http://eabay.github.io/2007/05/18/secici-gecirgen-yazilimlar-ebeveyn-kontrolu/"/>
+    <link href="http://erhanabay.com/2007/05/18/secici-gecirgen-yazilimlar-ebeveyn-kontrolu/"/>
     <updated>2007-05-18T13:00:00+03:00</updated>
-    <id>http://eabay.github.io/2007/05/18/secici-gecirgen-yazilimlar-ebeveyn-kontrolu</id>
+    <id>http://erhanabay.com/2007/05/18/secici-gecirgen-yazilimlar-ebeveyn-kontrolu</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Zend Studio]]></title>
-    <link href="http://eabay.github.io/2007/05/18/zend-studio/"/>
+    <link href="http://erhanabay.com/2007/05/18/zend-studio/"/>
     <updated>2007-05-18T12:00:00+03:00</updated>
-    <id>http://eabay.github.io/2007/05/18/zend-studio</id>
+    <id>http://erhanabay.com/2007/05/18/zend-studio</id>
   </entry>
   
 </feed>

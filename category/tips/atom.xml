@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tips | Erhan is typing...]]></title>
-  <link href="http://eabay.github.io/category/tips/atom.xml" rel="self"/>
-  <link href="http://eabay.github.io/"/>
-  <updated>2014-10-19T03:12:33+03:00</updated>
-  <id>http://eabay.github.io/</id>
+  <link href="http://erhanabay.com/category/tips/atom.xml" rel="self"/>
+  <link href="http://erhanabay.com/"/>
+  <updated>2014-10-19T03:45:27+03:00</updated>
+  <id>http://erhanabay.com/</id>
   <author>
     <name><![CDATA[Erhan Abay]]></name>
     
@@ -15,23 +15,23 @@
   
   <entry>
     <title type="html"><![CDATA[Lenovo 3000 N100 Audio Driver Problem on Windows 7]]></title>
-    <link href="http://eabay.github.io/2009/11/10/lenovo-3000-n100-audio-driver-problem-on-windows-7/"/>
+    <link href="http://erhanabay.com/2009/11/10/lenovo-3000-n100-audio-driver-problem-on-windows-7/"/>
     <updated>2009-11-10T00:00:00+02:00</updated>
-    <id>http://eabay.github.io/2009/11/10/lenovo-3000-n100-audio-driver-problem-on-windows-7</id>
+    <id>http://erhanabay.com/2009/11/10/lenovo-3000-n100-audio-driver-problem-on-windows-7</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Firefox localhost redirection solution]]></title>
-    <link href="http://eabay.github.io/2009/08/28/firefox-localhost-redirection-solution/"/>
+    <link href="http://erhanabay.com/2009/08/28/firefox-localhost-redirection-solution/"/>
     <updated>2009-08-28T00:00:00+03:00</updated>
-    <id>http://eabay.github.io/2009/08/28/firefox-localhost-redirection-solution</id>
+    <id>http://erhanabay.com/2009/08/28/firefox-localhost-redirection-solution</id>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Windows 7 port 80 issue]]></title>
-    <link href="http://eabay.github.io/2009/08/11/windows-7-port-80-issue/"/>
+    <link href="http://erhanabay.com/2009/08/11/windows-7-port-80-issue/"/>
     <updated>2009-08-11T00:00:00+03:00</updated>
-    <id>http://eabay.github.io/2009/08/11/windows-7-port-80-issue</id>
+    <id>http://erhanabay.com/2009/08/11/windows-7-port-80-issue</id>
   </entry>
   
 </feed>
