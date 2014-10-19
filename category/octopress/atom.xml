@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | Erhan is typing...]]></title>
+  <link href="http://erhanabay.com/category/octopress/atom.xml" rel="self"/>
+  <link href="http://erhanabay.com/"/>
+  <updated>2014-10-19T04:28:12+03:00</updated>
+  <id>http://erhanabay.com/</id>
+  <author>
+    <name><![CDATA[Erhan Abay]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Bye Bye Wordpress]]></title>
+    <link href="http://erhanabay.com/2014/10/19/bye-bye-wordpress/"/>
+    <updated>2014-10-19T00:00:00+03:00</updated>
+    <id>http://erhanabay.com/2014/10/19/bye-bye-wordpress</id>
+  </entry>
+  
+</feed>

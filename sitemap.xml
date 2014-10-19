@@ -3,6 +3,14 @@
   
   
   <url>
+    <loc>http://erhanabay.com/2014/10/19/bye-bye-wordpress/</loc>
+    
+    <lastmod>2014-10-19T00:00:00+03:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://erhanabay.com/2012/01/11/wordpress-plugin-gemius-tracking-code/</loc>
     
     <lastmod>2012-01-11T00:00:00+02:00</lastmod>
@@ -341,14 +349,14 @@
   
   <url>
     <loc>http://erhanabay.com/archives/</loc>
-    <lastmod>2014-10-19T03:45:27+03:00</lastmod>
+    <lastmod>2014-10-19T04:28:12+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://erhanabay.com/</loc>
-    <lastmod>2014-10-19T03:45:27+03:00</lastmod>
+    <lastmod>2014-10-19T04:28:12+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
